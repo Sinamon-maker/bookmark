@@ -1,5 +1,6 @@
 {
   "name": "Bookmark",
+  "displayName": "Keep in notes",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,6 +11,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^19.0.1",
     "@react-navigation/bottom-tabs": "^7.0.0-alpha.18",
     "@react-navigation/native": "^7.0.0-alpha.15",
     "@react-navigation/native-stack": "^7.0.0-alpha.16",

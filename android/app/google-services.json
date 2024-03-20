@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "411222659283",
+    "project_id": "todo-29844",
+    "storage_bucket": "todo-29844.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411222659283:android:d984403f3608670d440426",
+        "android_client_info": {
+          "package_name": "com.awesomeproject.MainApplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411222659283-r41948m24csqs7q3sjhqfdatbagprp2g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.awesomeproject.MainApplication",
+            "certificate_hash": "831131d723b1c48494ac8b047b68c710266c6a11"
+          }
+        },
+        {
+          "client_id": "411222659283-t0ajmth4gl7csdspdf97iv47m8j1gjii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdqGBApnhMkwjHO3u1fsS4SGlUaHfnBdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411222659283-t0ajmth4gl7csdspdf97iv47m8j1gjii.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411222659283-230sdm336slol90h75tb0alg2us98jat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.react.js.native.example.AwesomeProject"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411222659283:android:56fbfaf1ca9ae7dd440426",
+        "android_client_info": {
+          "package_name": "com.bookmark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411222659283-t0ajmth4gl7csdspdf97iv47m8j1gjii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdqGBApnhMkwjHO3u1fsS4SGlUaHfnBdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411222659283-t0ajmth4gl7csdspdf97iv47m8j1gjii.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411222659283-230sdm336slol90h75tb0alg2us98jat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.react.js.native.example.AwesomeProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
