@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {IconsNames} from '../../config/constants';
 import {ScreenWrapper} from '../../modules/common/ScreenWrapper';
 import {ButtonLink} from '../../modules/ui/ButtonLink';
@@ -7,8 +7,30 @@ import {Text, View} from 'react-native';
 import {colors} from '../../config/colors';
 import {font, size} from '../../config/fonts';
 import {StyleSheet} from 'react-native';
+import {SettingsScreenNavigationProp} from '../../navigation/stack/SettingsStackNavigator';
+import {useNavigation} from '@react-navigation/native';
+import useSignout from '../../api/useSignout';
+import {ErrorComponent} from '../../modules/common/ErrorComponent';
+import userStore from '../../store/userStore';
+import auth from '@react-native-firebase/auth';
 
 export const SettingsScreen = () => {
+  const navigation = useNavigation<SettingsScreenNavigationProp>();
+  const user = userStore(s => s.user);
+  const setUser = userStore(s => s.setUser);
+  const {err, signout, loading} = useSignout();
+
+  useEffect(() => {
+    const subscriber = auth().onUserChanged(userState => {
+      if (userState !== null) {
+        setUser(userState);
+      } else {
+        setUser(null);
+      }
+    });
+    return subscriber; // unsubscribe on unmount
+  }, [setUser]);
+
   return (
     <ScreenWrapper>
       <View style={styles.screenWrap}>
@@ -20,11 +42,18 @@ export const SettingsScreen = () => {
               color={colors.secondary}
             />
           </View>
-          <Text style={styles.avatarText}>jgjkkk</Text>
+          <Text style={styles.avatarText}>{user?.displayName}</Text>
+          <Text style={styles.emailText}>{user?.email}</Text>
         </View>
+        <ErrorComponent message={err} />
         <ButtonLink
           text="logout"
-          onPress={() => console.log('logout')}
+          onPress={() => signout()}
+          color={colors.primary}
+        />
+        <ButtonLink
+          text="change email"
+          onPress={() => navigation.navigate('ChangeEmail')}
           color={colors.primary}
         />
       </View>
@@ -57,6 +86,12 @@ const styles = StyleSheet.create({
     ...size.lg,
     color: colors.textInput,
     fontFamily: font.InterBold,
+    letterSpacing: 0.4,
+  },
+  emailText: {
+    ...size.lg,
+    color: colors.textInput,
+    fontFamily: font.InterRegular,
     letterSpacing: 0.4,
   },
 });

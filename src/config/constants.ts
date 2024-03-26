@@ -19,13 +19,19 @@ export enum IconsNames {
   ARROW_RIGHT = 'arrow-right',
 }
 
-export enum SortParam {
+export enum SortTaskParam {
   ALL = 'All',
   DONE = 'Done',
   ONGOING = 'Ongoing',
 }
 
+export enum SortCataloguesParam {
+  ALL = 'All',
+  ARCHIVED = 'Archived',
+  CURRENT = 'Current',
+}
+
 export enum CollectionNames {
-  TASKS = 'tasks', //catalogues
+  Catalogues = 'tasks', //catalogues
   FOLDERS = 'folders',
 }

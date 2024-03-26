@@ -5,8 +5,8 @@
  * @format
  */
 
-import React from 'react';
-
+import React, {useEffect, useState} from 'react';
+import userStore from './src/store/userStore';
 import {WelcomeScreen} from './src/screen/auth/WelcomeScreen';
 import {LoginScreen} from './src/screen/auth/LoginScreen';
 import {SignupScreen} from './src/screen/auth/SignupScreen';
@@ -20,14 +20,41 @@ import {AuthNavigator} from './src/navigation/stack/AuthStackNavigator';
 import {TasksNavigator} from './src/navigation/stack/TaskStackNavigator';
 import {MainTabNavigator} from './src/navigation/MainNavigator';
 import {NavigationContainer} from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
+import {LoaderScreen} from './src/screen/LoaderScreen';
+import {LoaderAppScreen} from './src/screen/LoaderAppScreen';
 
 function App(): React.JSX.Element {
-  const isLogged = true;
+  const setUser = userStore(s => s.setUser);
+  const user = userStore(s => s.user);
+  const [initializing, setInitializing] = useState(true);
+  // useEffect(() => {
+  //   SplashScreen.hide();
+  // }, []);
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(userState => {
+      if (userState !== null) {
+        setUser(userState);
+      } else {
+        setUser(null);
+      }
+      if (initializing) {
+        setTimeout(() => {
+          setInitializing(false);
+        }, 2000);
+      }
+    });
+    return subscriber; // unsubscribe on unmount
+  }, [initializing, setUser]);
+
+  if (initializing) {
+    return <LoaderAppScreen />;
+  }
   return (
     <>
-      {isLogged ? (
+      {user ? (
         <NavigationContainer>
-          {isLogged ? <MainTabNavigator /> : <AuthNavigator />}
+          <MainTabNavigator />
         </NavigationContainer>
       ) : (
         <AuthNavigator />

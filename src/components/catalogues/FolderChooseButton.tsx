@@ -8,16 +8,20 @@ import {IconComponent} from '../../modules/ui/IconComponent';
 
 export type FolderChooseButtonProps = {
   onPress: () => void;
+  text: string;
 };
 
-export const FolderChooseButton = ({onPress}: FolderChooseButtonProps) => {
+export const FolderChooseButton = ({
+  onPress,
+  text,
+}: FolderChooseButtonProps) => {
   return (
     <View style={styles.contentWrap}>
       <IconComponent
         iconName={IconsNames.OPENFOLDER}
         color={colors.secondary}
       />
-      <Text style={styles.text}>jhfjffkf</Text>
+      <Text style={styles.text}>{text}</Text>
       <AppButton btnStyles={styles.btnOpenStyles} onPress={onPress}>
         <IconComponent iconName={IconsNames.CHEVRON_DOWM} />
       </AppButton>
@@ -32,6 +36,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
+    borderWidth: 2,
+    borderColor: colors.textMain,
+    alignSelf: 'flex-start',
+    borderRadius: 8,
+    paddingHorizontal: 6,
+    paddingVertical: 4,
   },
   text: {
     fontFamily: font.InterSemiBold,

@@ -12,6 +12,7 @@ type SubmitFieldFormProps = {
 
 export const SubmitFieldForm = <T,>({title, loading}: SubmitFieldFormProps) => {
   const {handleSubmit} = useFormikContext<T>();
+
   return (
     <AppButton
       text={loading ? '' : title}

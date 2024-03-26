@@ -9,10 +9,11 @@ import {
 import {TasksScreen} from '../../screen/tasks/TasksScreent';
 import {CataloguesScreen} from '../../screen/catalogues/CataloguesScreen';
 import {FolderScreen} from '../../screen/folders/FolderScreen';
-import {CreateTaskScreen} from '../../screen/tasks/CreateTaskScreen';
+
 import {colors} from '../../config/colors';
 import {font, size} from '../../config/fonts';
 import {Task} from '../../config/types';
+import {CreateTaskScreen} from '../../screen/tasks/CreateTaskScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -71,13 +72,11 @@ type TasksStackParamList = {
   CreateTask: Task | undefined;
 };
 
-export type TasksScreenNavigationProp = NativeStackNavigationProp<
+export type TasksProps = NativeStackScreenProps<
   TasksStackParamList,
-  'Tasks'
+  'CreateTask'
 >;
-
-export type TasksProps = NativeStackScreenProps<TasksStackParamList, 'Tasks'>;
-
+export type TasksScreenNavigationProp = TasksProps['navigation'];
 export type TasksScreenRouteProp = TasksProps['route'];
 
 declare global {

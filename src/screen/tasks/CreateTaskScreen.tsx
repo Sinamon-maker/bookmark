@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ScreenWrapper} from '../../modules/common/ScreenWrapper';
 import {View, Text, StyleSheet} from 'react-native';
 import {AppForm} from '../../form/AppForm';
@@ -9,9 +9,16 @@ import {AppButton} from '../../modules/ui/AppButton';
 import {colors} from '../../config/colors';
 import {font, size} from '../../config/fonts';
 import {tasksEditSchema} from '../../form/schemas/taskEditSchema';
-import {TasksScreenNavigationProp} from '../../navigation/stack/TaskStackNavigator';
-import {useNavigation} from '@react-navigation/native';
-import {Task} from '../../config/types';
+import {
+  TasksScreenNavigationProp,
+  TasksScreenRouteProp,
+} from '../../navigation/stack/TaskStackNavigator';
+import {useNavigation, useRoute} from '@react-navigation/native';
+import {Data, Task} from '../../config/types';
+import useCatalogueStore from '../../store/useCatalogueStore';
+import {useUpdateData} from '../../api/useUpdateData';
+import {useGetDocument} from '../../api/useGetDocument';
+import {CollectionNames} from '../../config/constants';
 
 type TaskEditValues = {
   taskText: string;
@@ -20,32 +27,68 @@ type TaskEditValues = {
 
 export type CreateTaskScreenProps = {
   navigation: TasksScreenNavigationProp;
-  route: {
-    params?: Task;
+  route?: {
+    params: Task;
   };
 };
 
-export const CreateTaskScreen = ({
-  route,
-  navigation,
-}: CreateTaskScreenProps) => {
-  const task = route.params;
-  const [valu, setVal] = useState();
+export const CreateTaskScreen = () => {
+  const navigation = useNavigation<TasksScreenNavigationProp>();
+  const route = useRoute<TasksScreenRouteProp>();
+  const task = route ? route.params : undefined;
+  const activeCatalogue = useCatalogueStore(s => s.activeCatalogue);
+  const {loading, err, updateData} = useUpdateData();
+  const {data} = useGetDocument<Data>(
+    CollectionNames.Catalogues,
+    activeCatalogue,
+  );
+  const taskList = data ? data.tasks : [];
+  console.log('create data', data);
+  const createTask = (val: TaskEditValues) => {
+    const item = {
+      text: val.taskText,
+      detailes: val.detailes,
+      status: false,
+      createdAt: +new Date(),
+    };
+    const newTasks = [...taskList, {...item}];
+    updateData(CollectionNames.Catalogues, {tasks: newTasks}, activeCatalogue);
+  };
+
+  const changeTask = (val: TaskEditValues) => {
+    const item = {
+      ...task,
+      text: val.taskText,
+      detailes: val.detailes,
+    };
+    const newTasks = taskList?.map(it => {
+      if (item.created === it.created) {
+        return {...item};
+      } else {
+        return it;
+      }
+    });
+    updateData(CollectionNames.Catalogues, {tasks: newTasks}, activeCatalogue);
+  };
   const submit = (val: TaskEditValues) => {
-    console.log(val);
-    setVal(val?.detailes);
+    if (!task) {
+      createTask(val);
+    } else {
+      changeTask(val);
+    }
+    navigateBackToTasks();
   };
 
   const navigateBackToTasks = () => {
     navigation.goBack();
   };
+
   return (
     <ScreenWrapper>
       <View style={styles.screenWrap}>
         <Text style={styles.textHeading}>
           {task ? 'Edit task' : 'Create task'}
         </Text>
-        <Text>{valu}</Text>
         <AppForm<TaskEditValues>
           initialValues={
             !task
@@ -78,11 +121,10 @@ export const CreateTaskScreen = ({
             keyboardType="default"
             multiline
             name="detailes"
-            onSubmitEditing={() => console.log('submit editing')}
           />
 
-          <ErrorComponent message="error" />
-          <SubmitFieldForm title="Save" />
+          <ErrorComponent message={err} />
+          <SubmitFieldForm title="Save" loading={loading} />
           <AppButton
             background={colors.secondary}
             btnStyles={{marginTop: 16}}

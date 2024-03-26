@@ -7,13 +7,13 @@ import {InputFieldForm} from '../../form/InputFieldForm';
 import {SubmitFieldForm} from '../../form/SubmitFieldForm';
 import {userLoginSchema} from '../../form/schemas/loginSchema';
 import {ErrorComponent} from '../../modules/common/ErrorComponent';
+import useLogin from '../../api/useLogin';
 
 export const FormLogin = () => {
-  // const {err, login, loading} = useLogin();
+  const {err, login, loading} = useLogin();
 
   const submit = (values: FormikValues) => {
-    // login(values.email, values.password);
-    console.log(values);
+    login(values.email, values.password);
   };
   return (
     <AppForm
@@ -42,8 +42,8 @@ export const FormLogin = () => {
         textContentType="password"
         name="password"
       />
-      <ErrorComponent message="jhgjgkg" />
-      <SubmitFieldForm title="Login" />
+      <ErrorComponent message={err} />
+      <SubmitFieldForm title="Login" loading={loading} />
     </AppForm>
   );
 };

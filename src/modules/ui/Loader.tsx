@@ -26,8 +26,15 @@ export const Loader = ({size, color}: LoaderProps) => {
   }, [spinValue]);
 
   useEffect(() => {
-    spin();
-  }, [spin]);
+    Animated.loop(
+      Animated.timing(spinValue, {
+        toValue: 360,
+        duration: 1000,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      }),
+    ).start();
+  }, [spinValue]);
   return (
     <Animated.View
       style={[
@@ -36,7 +43,7 @@ export const Loader = ({size, color}: LoaderProps) => {
           borderColor: color ? color : colors.secondary,
           width: size ? size : 40,
           height: size ? size : 40,
-          transform: [{rotate}],
+          transform: [{rotate}, {perspective: 1000}],
         },
       ]}
     />
@@ -48,5 +55,6 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderRadius: 50,
     borderTopColor: 'transparent',
+    borderBottomColor: 'transparent',
   },
 });

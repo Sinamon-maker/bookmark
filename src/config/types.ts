@@ -20,4 +20,5 @@ export type Data = {
   tasks: Array<Task>;
   displayName: string;
   folderId: string;
+  archived: boolean;
 };

@@ -9,6 +9,7 @@ import {
   StyleSheet,
   Animated,
   ScrollView,
+  FlatList,
 } from 'react-native';
 
 import {useState} from 'react';
@@ -141,14 +142,11 @@ export const Select = ({
                 {height: !open ? 0 : 'auto'},
                 {top: dropdownTop, width: wi},
               ]}>
-              <ScrollView
-                contentContainerStyle={{height: 'auto'}}
-                nestedScrollEnabled={true}
-                style={styles.scrollView}
-                keyboardDismissMode="on-drag"
-                keyboardShouldPersistTaps="always">
-                {options &&
-                  options.map(item => (
+              <FlatList
+                data={options}
+                keyExtractor={item => item.id}
+                renderItem={({item}) => {
+                  return (
                     <Pressable key={item.id} onPress={() => onItemPress(item)}>
                       <View style={styles.itemWrap}>
                         <Text style={styles.itemText}>{item.title}</Text>
@@ -161,8 +159,9 @@ export const Select = ({
                         )}
                       </View>
                     </Pressable>
-                  ))}
-              </ScrollView>
+                  );
+                }}
+              />
             </Animated.View>
           </TouchableOpacity>
         </Modal>

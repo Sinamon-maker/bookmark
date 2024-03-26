@@ -6,13 +6,15 @@ import {InputFieldForm} from '../../form/InputFieldForm';
 import {SubmitFieldForm} from '../../form/SubmitFieldForm';
 import {userSignupSchema} from '../../form/schemas/signipSchems';
 import {ErrorComponent} from '../../modules/common/ErrorComponent';
+import useSignup from '../../api/useSignup';
 
 export const FormSignup = () => {
-  // const {err, signup, loading} = useSignup();
+  const {err, signup, loading} = useSignup();
 
   const submit = (values: FormikValues) => {
-    //    signup(values.displayName, values.email, values.password);
-    console.log(values);
+    console.log('1', values, err, loading);
+    signup(values.displayName, values.email, values.password);
+    console.log('2', values, err, loading);
   };
   return (
     <AppForm
@@ -27,7 +29,7 @@ export const FormSignup = () => {
       <InputFieldForm
         iconName={IconsNames.ACCOUNT}
         name="displayName"
-        placeholder="DisplayName"
+        placeholder="DisplayName*"
         autoCapitalize="none"
         autoCorrect={false}
         keyboardType="default"
@@ -51,8 +53,8 @@ export const FormSignup = () => {
         textContentType="password"
         name="password"
       />
-      <ErrorComponent message="jhgjgk" />
-      <SubmitFieldForm title="Signup" loading={false} />
+      <ErrorComponent message={err} />
+      <SubmitFieldForm title="Signup" loading={loading} />
     </AppForm>
   );
 };

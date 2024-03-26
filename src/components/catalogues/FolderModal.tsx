@@ -1,22 +1,41 @@
 import React, {useState} from 'react';
-import {FlatList, Modal, StyleSheet, View} from 'react-native';
+import {FlatList, Modal, Pressable, StyleSheet, View} from 'react-native';
 import {colors} from '../../config/colors';
 import {IconsNames} from '../../config/constants';
 import {AppButton} from '../../modules/ui/AppButton';
 import {IconComponent} from '../../modules/ui/IconComponent';
 import {SearchInput} from '../../modules/ui/SearchInput';
 import {EmptyComponent} from '../../modules/common/EmptyComponent';
-import {folders} from '../../data/data';
+
+import {Folder} from '../../config/types';
+import {emptyText} from '../../utils';
 
 export type FolderModalProps = {
+  folders: Folder[];
   modalFolderOpen: boolean;
   closeModal: () => void;
+  activeFolder?: string;
+  setActiveFolder: (val: string) => void;
 };
 
 export const FolderModal = ({
   modalFolderOpen,
   closeModal,
+  folders,
+  activeFolder,
+  setActiveFolder,
 }: FolderModalProps) => {
+  const [searchQuery, setSearchQuery] = useState();
+  const onChangeSearch = (val: string) => {
+    setSearchQuery(val);
+  };
+
+  const selectFolder = (val: string) => {
+    setActiveFolder(val);
+    console.log('select folder');
+    closeModal();
+  };
+
   return (
     <Modal
       animationType="fade"
@@ -33,20 +52,27 @@ export const FolderModal = ({
             size={18}
           />
         </AppButton>
-        <SearchInput width={90} />
+        {folders.length > 3 && (
+          <SearchInput width={90} onChangeText={onChangeSearch} />
+        )}
         <FlatList
-          ListEmptyComponent={<EmptyComponent title="Folders" />}
+          ListEmptyComponent={<EmptyComponent title={emptyText.notFound} />}
           style={{borderRadius: 8}}
           data={folders}
           keyExtractor={item => item.id}
-          renderItem={({item, index}) => (
+          renderItem={({item}) => (
             <View style={styles.folderItem}>
               <AppButton
-                text="hghjgjgkgk"
+                text={item.title}
                 btnStyles={styles.btnFolder}
-                textStyles={styles.textFolder}>
+                textStyles={styles.textFolder}
+                onPress={() => selectFolder(item.id)}>
                 <IconComponent
-                  iconName={IconsNames.FOLDER}
+                  iconName={
+                    item.id === activeFolder
+                      ? IconsNames.OPENFOLDER
+                      : IconsNames.FOLDER
+                  }
                   color={colors.secondary}
                 />
               </AppButton>

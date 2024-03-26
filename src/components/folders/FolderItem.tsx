@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Platform, Text, StyleSheet, Alert} from 'react-native';
+import {View, Platform, Text, StyleSheet, Alert, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {colors} from '../../config/colors';
 import {IconsNames} from '../../config/constants';
@@ -9,59 +9,78 @@ import {font, size} from '../../config/fonts';
 import {ModalEdit} from '../../modules/common/ModalEdit';
 import {Folder} from '../../config/types';
 import {MyContextMenu} from '../../modules/common/ContextMenu';
+import {alertText} from '../../utils';
 
 export type FolderItemProps = {
   folder: Folder;
+  isActiveFolder?: boolean;
+  setActiveFolder?: (val: string) => void;
+  deleteFolder: (val: string) => void;
+  editFolder: (val: string, id: string) => void;
 };
 
-export const FolderItem = ({folder}: FolderItemProps) => {
+export const FolderItem = ({
+  folder,
+  isActiveFolder = false,
+  setActiveFolder,
+  deleteFolder,
+  editFolder,
+}: FolderItemProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   const submit = (val: string) => {
-    console.log('new folder', val);
+    editFolder(val, folder.id);
+    setModalOpen(false);
   };
 
-  const onEdit = () => {
-    Alert.alert(
-      'Deliting',
-      'Are you shure yuo are going to delete folder? All catalogues and tasks will be deleted too.',
-      [{text: 'No'}, {text: 'Yes', onPress: () => console.log('delete')}],
-    );
+  const onPressFolder = () => {
+    setActiveFolder && setActiveFolder(folder.id);
+  };
+
+  const onPressDelete = () => {
+    Alert.alert(alertText.deleteTitle, alertText.deleteFolder, [
+      {text: 'No'},
+      {text: 'Yes', onPress: () => deleteFolder(folder.id)},
+    ]);
   };
   return (
     <>
-      <View style={{flex: 1}}>
-        <View
-          style={[
-            styles.folderItemWrap,
-            Platform.OS === 'ios'
-              ? styles.shadowIosProp
-              : styles.elevationAndroid,
-          ]}>
-          <View style={styles.menuBtn}>
-            <MyContextMenu
-              contextMenuData={[
-                {title: 'edit', func: () => setModalOpen(true)},
-                {title: 'delete', func: () => onEdit()},
-              ]}
-            />
+      <Pressable onPress={onPressFolder}>
+        <View style={{flex: 1}}>
+          <View
+            style={[
+              styles.folderItemWrap,
+              Platform.OS === 'ios'
+                ? styles.shadowIosProp
+                : styles.elevationAndroid,
+            ]}>
+            <View style={styles.menuBtn}>
+              <MyContextMenu
+                contextMenuData={[
+                  {title: 'edit', func: () => setModalOpen(true)},
+                  {title: 'delete', func: () => onPressDelete()},
+                ]}
+              />
+            </View>
+            <View style={{marginTop: 10}}>
+              <IconComponent
+                iconName={
+                  isActiveFolder ? IconsNames.OPENFOLDER : IconsNames.FOLDER
+                }
+                color={colors.secondary}
+                size={40}
+              />
+            </View>
+            <Text style={styles.text}>{folder.title}</Text>
           </View>
-          <View style={{marginTop: 10}}>
-            <IconComponent
-              iconName={IconsNames.FOLDER}
-              color={colors.secondary}
-              size={40}
-            />
-          </View>
-          <Text style={styles.text}>jhgjkgkjkgj nbvhv nbvhjhjv</Text>
         </View>
-      </View>
-      <ModalEdit
-        modalFolderOpen={modalOpen}
-        closeModal={() => setModalOpen(false)}
-        placeholder="Enter new name"
-        previousValue={folder.title}
-        submit={submit}
-      />
+        <ModalEdit
+          modalFolderOpen={modalOpen}
+          closeModal={() => setModalOpen(false)}
+          placeholder="Enter new name"
+          previousValue={folder.title}
+          submit={submit}
+        />
+      </Pressable>
     </>
   );
 };

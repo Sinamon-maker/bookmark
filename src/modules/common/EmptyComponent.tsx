@@ -10,7 +10,7 @@ export type EmptyComponentProps = {
 export const EmptyComponent = ({title}: EmptyComponentProps) => {
   return (
     <View style={styles.wrap}>
-      <Text style={styles.text}>Not {title} yet. Start creating!</Text>
+      <Text style={styles.text}> {title} </Text>
     </View>
   );
 };
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 16,
   },
   text: {
     fontFamily: font.InterSemiBold,

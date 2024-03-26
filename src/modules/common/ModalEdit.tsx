@@ -24,6 +24,7 @@ export const ModalEdit = ({
 
   const onSubmit = () => {
     submit(value);
+    setValue('');
   };
   return (
     <Modal

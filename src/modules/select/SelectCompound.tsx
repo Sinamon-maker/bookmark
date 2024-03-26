@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   SelectContent,
   SelectItem,
   SelectRoot,
   SelectTrigger,
 } from './components';
-import {ScrollView, StyleSheet} from 'react-native';
+import {
+  FlatList,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {IconsNames} from '../../config/constants';
+import {IconComponent} from '../ui/IconComponent';
 
 type SelectOption = {
   title: string;
@@ -45,34 +53,38 @@ export const SelectCompound = ({
         if (typeof initial === 'string') {
           return initial;
         } else {
+          console.log('hfhjfjh', initial.title);
           return initial.title;
         }
       }
     }
+
     return '';
   };
+
   return (
     <SelectRoot
       onSelect={onSelect}
       initialValue={getInitialValue()}
+      selected={selected}
       disabled={disabled}
       width={width}>
       <SelectTrigger
         iconDecorationName={iconDecorationName}
         placeholderText={placeholder}
         disabled={disabled}
+        initialValue={getInitialValue()}
       />
       <SelectContent>
-        <ScrollView
-          contentContainerStyle={{height: 'auto'}}
-          nestedScrollEnabled={true}
-          style={styles.scrollView}
-          keyboardDismissMode="on-drag"
-          keyboardShouldPersistTaps="always">
-          {options?.map(item => (
-            <SelectItem id={item.id} value={item.id} label={item.title} />
-          ))}
-        </ScrollView>
+        <FlatList
+          data={options}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => {
+            return (
+              <SelectItem id={item.id} value={item.id} label={item.title} />
+            );
+          }}
+        />
       </SelectContent>
     </SelectRoot>
   );

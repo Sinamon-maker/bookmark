@@ -14,24 +14,27 @@ type SelectOption = {
 export type FilterComponentProps = {
   options: SelectOption[];
   onPress: () => void;
+  placeholder?: string;
   selected?: string;
+  onSelect?: (val: string) => void;
 };
 
 export const FilterComponent = ({
   options,
   onPress,
   selected,
+  placeholder = '',
+  onSelect,
 }: FilterComponentProps) => {
-  const [selected2, setSelected2] = useState('');
-  const onSelect2 = (val: string) => {
-    setSelected2(val);
+  const pressSelect = (val: string) => {
+    onSelect && onSelect(val);
   };
   return (
     <View style={styles.filterWrap}>
       <SelectCompound
-        onSelect={onSelect2}
+        onSelect={pressSelect}
         selected={selected}
-        placeholder="Choose folder"
+        placeholder={placeholder}
         options={options}
         disabled={options.length === 0}
         width={70}

@@ -1,24 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ScreenWrapper} from '../../modules/common/ScreenWrapper';
-import {BaseInput} from '../../modules/ui/BaseInput';
-import {Image, StyleSheet, Text, View} from 'react-native';
-import {IconsNames} from '../../config/constants';
-import {FormLogin} from '../../components/auth/FormLogin';
-import {AppButton} from '../../modules/ui/AppButton';
+import {View, StyleSheet} from 'react-native';
 import {colors} from '../../config/colors';
-import {FormSignup} from '../../components/auth/FormSignup';
-import {AuthScreenNavigationProp} from '../../navigation/stack/AuthStackNavigator';
+import {FormChangeEmail} from '../../components/auth/FormChangeEmail';
+import {AppButton} from '../../modules/ui/AppButton';
 import {useNavigation} from '@react-navigation/native';
+import {SettingsScreenNavigationProp} from '../../navigation/stack/SettingsStackNavigator';
 import {ImageLogoComponent} from '../../components/auth/ImageLogoComponent';
 
-export const SignupScreen = () => {
-  const navigation = useNavigation<AuthScreenNavigationProp>();
+export const ChangeEmailScreen = () => {
+  const navigation = useNavigation<SettingsScreenNavigationProp>();
   return (
     <ScreenWrapper>
       <View style={styles.screenWrap}>
         <ImageLogoComponent />
-
-        <FormSignup />
+        <FormChangeEmail />
         <AppButton
           text="Cancel"
           background={colors.secondary}
@@ -34,8 +30,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: colors.superLight,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     gap: 16,
     padding: 10,
   },

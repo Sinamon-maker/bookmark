@@ -1,4 +1,8 @@
 export const size = {
+  xs: {
+    fontSize: 12 /* 12px */,
+    lineHeight: 16 /* 16px */,
+  },
   sm: {
     fontSize: 14,
     lineHeight: 20,

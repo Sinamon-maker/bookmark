@@ -11,14 +11,16 @@ export type SelectTriggerPros = {
   iconDecorationName?: IconsNames;
   placeholderText?: string;
   disabled?: boolean;
+  initialValue?: string;
 };
 
 export const SelectTrigger = ({
   iconDecorationName,
   placeholderText,
   disabled = false,
+  initialValue,
 }: SelectTriggerPros) => {
-  const {DropdownButton, toggleSelect, innerSelected} =
+  const {DropdownButton, selected, toggleSelect, innerSelected} =
     useContext(SelectContext);
   return (
     <TouchableOpacity
@@ -33,10 +35,13 @@ export const SelectTrigger = ({
           style={[
             styles.inputText,
             {
-              color: innerSelected ? colors.textMain : colors.textPlaceholder,
+              color:
+                innerSelected || selected
+                  ? colors.textMain
+                  : colors.textPlaceholder,
             },
           ]}>
-          {innerSelected ? innerSelected : placeholderText}
+          {selected || innerSelected ? initialValue : placeholderText}
         </Text>
         <IconComponent iconName={IconsNames.UNFOLD} size={18} />
       </View>

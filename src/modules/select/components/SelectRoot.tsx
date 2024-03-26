@@ -12,6 +12,7 @@ export type SelectContextType = {
   toggleSelect: () => void;
   handleSelect: (val: string, label: string) => void;
   innerSelected: string;
+  selected?: string;
   fadeAnim: Animated.Value | number;
   DropdownButton: React.RefObject<TouchableOpacity> | null;
   dropdownTop: DimensionValue;
@@ -23,6 +24,7 @@ export const SelectContext = React.createContext<SelectContextType>({
   toggleSelect: () => {},
   handleSelect: () => {},
   innerSelected: '',
+  selected: '',
   fadeAnim: 0,
   DropdownButton: null,
   dropdownTop: 0,
@@ -32,6 +34,7 @@ export const SelectContext = React.createContext<SelectContextType>({
 export type SelectRootProps = {
   children: React.ReactNode;
   onSelect?: (val: string) => void;
+  selected?: string;
   disabled?: boolean;
   width?: number;
   initialValue: string;
@@ -40,11 +43,14 @@ export type SelectRootProps = {
 export const SelectRoot = ({
   children,
   onSelect,
+  selected,
   disabled = false,
   width = 100,
   initialValue,
 }: SelectRootProps) => {
-  const [innerSelected, setSelected] = useState(initialValue);
+  const [innerSelected, setSelected] = useState<
+    {id: string; title: string} | string
+  >(selected ? selected : '');
 
   const [open, setOpen] = useState(false);
   const DropdownButton = React.useRef<TouchableOpacity>(null);
@@ -98,7 +104,7 @@ export const SelectRoot = ({
     setSelected(label);
     onSelect && onSelect(val);
   };
-
+  console.log('innerSelected', initialValue, innerSelected);
   return (
     <SelectContext.Provider
       value={{
@@ -106,6 +112,7 @@ export const SelectRoot = ({
         open,
         handleSelect,
         innerSelected,
+        selected,
         fadeAnim,
         DropdownButton,
         dropdownTop,

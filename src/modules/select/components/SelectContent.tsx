@@ -47,15 +47,18 @@ const styles = StyleSheet.create({
     width: '100%',
     paddingLeft: 16,
     paddingTop: 16,
+    paddingBottom: 16,
     borderWidth: 1,
     borderColor: colors.secondary,
     borderRadius: 8,
     backgroundColor: colors.superLight,
     overflow: 'hidden',
     position: 'absolute',
+    minHeight: 130,
     height: 'auto',
     maxHeight: '70%',
-    marginLeft: 16,
+
+    marginLeft: 12,
   },
 
   shadowIosProp: {

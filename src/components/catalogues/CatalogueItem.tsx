@@ -1,62 +1,103 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Alert} from 'react-native';
+import {View, Text, StyleSheet, Alert, Pressable} from 'react-native';
 import {colors} from '../../config/colors';
-import {IconsNames} from '../../config/constants';
 import {font, size} from '../../config/fonts';
-import {AppButton} from '../../modules/ui/AppButton';
-import {IconComponent} from '../../modules/ui/IconComponent';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Data} from '../../config/types';
 import {ModalEdit} from '../../modules/common/ModalEdit';
 import {MyContextMenu} from '../../modules/common/ContextMenu';
+import {alertText, convertTime} from '../../utils';
 
 export type CatalogueItemProps = {
   data: Data;
+  index: number;
+  activeCatalogue?: string;
+  onPressCatalogue?: (val: string) => void;
+  onDeleteCatalogue: (val: string) => void;
+  onEditCatalogue: (val: string, id: string) => void;
+  onArchiveCatalogue: (id: string) => void;
 };
 
-export const CatalogueItem = ({data}: CatalogueItemProps) => {
+export const CatalogueItem = ({
+  data,
+  index,
+  activeCatalogue,
+  onPressCatalogue,
+  onDeleteCatalogue,
+  onEditCatalogue,
+  onArchiveCatalogue,
+}: CatalogueItemProps) => {
   const [modalOpen, setModalOpen] = useState(false);
+
   const submit = (val: string) => {
-    console.log('new catalogue', val);
+    onEditCatalogue(val, data.id);
+    setModalOpen(false);
   };
 
-  const onEdit = () => {
-    Alert.alert(
-      'Deliting',
-      'Are you shure yuo are going to delete Catalogue? All tasks will be deleted too.',
-      [{text: 'No'}, {text: 'Yes', onPress: () => console.log('delete')}],
-    );
+  const onItemPress = () => {
+    onPressCatalogue && onPressCatalogue(data.id);
   };
+  const onPressDelete = () => {
+    Alert.alert(alertText.deleteTitle, alertText.deleteCatalogue, [
+      {text: 'No'},
+      {text: 'Yes', onPress: () => onDeleteCatalogue(data.id)},
+    ]);
+  };
+
+  const toArchive = () => {
+    if (data.tasks.length === 0) {
+      Alert.alert(alertText.archivation, alertText.toArchive, [{text: 'Ok'}]);
+    } else {
+      onArchiveCatalogue(data.id);
+    }
+  };
+  const contextMenuData = (archived: boolean) => {
+    if (!archived) {
+      return [
+        {title: 'edit', func: () => setModalOpen(true)},
+        {title: 'delete', func: () => onPressDelete()},
+        {title: 'toArchive', func: () => toArchive()},
+      ];
+    } else {
+      return [{title: 'delete', func: () => onPressDelete()}];
+    }
+  };
+
   return (
     <>
-      <View style={styles.itemWrap}>
-        <Text style={styles.number}>2.</Text>
-        <View style={{flex: 1}}>
-          <View style={styles.itemContent}>
-            <Text style={styles.title}>
-              Name of Catalogue and very long name super long
-            </Text>
-            <View style={styles.menuBtn}>
-              <MyContextMenu
-                contextMenuData={[
-                  {title: 'edit', func: () => setModalOpen(true)},
-                  {title: 'delete', func: () => onEdit()},
-                ]}
-              />
+      <Pressable onPress={onItemPress}>
+        <View
+          style={[
+            styles.itemWrap,
+            {
+              borderColor:
+                data.id === activeCatalogue
+                  ? colors.additional
+                  : colors.primary,
+            },
+          ]}>
+          <Text style={styles.number}>{index + 1}.</Text>
+          <View style={{flex: 1}}>
+            <View style={styles.itemContent}>
+              <Text style={styles.title}>{data.title}</Text>
+              <View style={styles.menuBtn}>
+                <MyContextMenu
+                  contextMenuData={contextMenuData(data.archived)}
+                />
+              </View>
             </View>
+            <Text style={{...size.xs, color: colors.additional}}>
+              {convertTime(data.createdAt)}
+            </Text>
           </View>
-          <Text style={{...size.sm, color: colors.additional}}>
-            ong name super long
-          </Text>
         </View>
-      </View>
-      <ModalEdit
-        modalFolderOpen={modalOpen}
-        closeModal={() => setModalOpen(false)}
-        placeholder="Enter new name"
-        previousValue={data.title}
-        submit={submit}
-      />
+        <ModalEdit
+          modalFolderOpen={modalOpen}
+          closeModal={() => setModalOpen(false)}
+          placeholder="Enter new name"
+          previousValue={data.title}
+          submit={submit}
+        />
+      </Pressable>
     </>
   );
 };

@@ -30,7 +30,7 @@ export const tasks = [
   },
 ];
 
-export const folders = [
+export const folders2 = [
   {
     title: 'Buying',
     id: 'jhhgjgjkkjb',

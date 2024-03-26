@@ -9,6 +9,7 @@ import type {StaticParamList} from '@react-navigation/native';
 import {SettingsScreen} from '../../screen/settings/SettingsScreen';
 import {colors} from '../../config/colors';
 import {font, size} from '../../config/fonts';
+import {ChangeEmailScreen} from '../../screen/settings/ChangeEmailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,28 +28,17 @@ export const SettingsNavigator = () => {
         },
       }}>
       <Stack.Screen name="Settings" component={SettingsScreen} />
+      <Stack.Screen name="ChangeEmail" component={ChangeEmailScreen} />
     </Stack.Navigator>
   );
 };
 
-const SettingsStack = createNativeStackNavigator({
-  initialRouteName: 'Settings',
-  screenOptions: {
-    headerBackTitleVisible: false,
-  },
-  screens: {
-    Settings: {
-      screen: SettingsScreen,
-      options: {
-        headerShown: false,
-      },
-    },
-  },
-});
-
 //export const SettingsNavigator = createStaticNavigation(SettingsStack);
 
-type SettingsStackParamList = StaticParamList<typeof SettingsStack>;
+type SettingsStackParamList = {
+  Settings: undefined;
+  ChangeEmail: undefined;
+};
 
 export type SettingsScreenNavigationProp = NativeStackNavigationProp<
   SettingsStackParamList,

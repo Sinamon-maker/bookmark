@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {View, Text, StyleSheet, Alert} from 'react-native';
 import {colors} from '../../config/colors';
 import {IconsNames} from '../../config/constants';
 import {size, font} from '../../config/fonts';
@@ -10,72 +9,92 @@ import {Task} from '../../config/types';
 import {MyContextMenu} from '../../modules/common/ContextMenu';
 import {TasksScreenNavigationProp} from '../../navigation/stack/TaskStackNavigator';
 import {useNavigation} from '@react-navigation/native';
+import {alertText} from '../../utils';
 
 export type TaskItemProps = {
   task: Task;
+  index: number;
+  changeStatus: (val: Task) => void;
+  deleteTask: (val: Task) => void;
+  archived: boolean;
 };
 
-export const TaskItem = ({task}: TaskItemProps) => {
+export const TaskItem = ({
+  task,
+  index,
+  changeStatus,
+  deleteTask,
+  archived = false,
+}: TaskItemProps) => {
   const navigation = useNavigation<TasksScreenNavigationProp>();
   const [isUnfold, setIsUnfold] = useState(false);
 
   const toEditScreen = () => {
     navigation.navigate('CreateTask', task);
   };
+
+  const onPressDelete = () => {
+    Alert.alert(alertText.deleteTitle, alertText.deleteTask, [
+      {text: 'No'},
+      {text: 'Yes', onPress: () => deleteTask(task)},
+    ]);
+  };
+
   return (
     <View style={styles.itemWrap}>
       <View style={styles.numberWrap}>
-        <Text style={styles.number}>1</Text>
-        {true ? (
+        <Text style={styles.number}>{index + 1}</Text>
+        {task.status ? (
           <AppButton
             btnStyles={styles.checkedBtn}
-            onPress={() => console.log('checked')}>
+            onPress={() => changeStatus(task)}
+            disabled={archived}>
             <IconComponent iconName={IconsNames.CHECK} size={18} />
           </AppButton>
         ) : (
           <AppButton
             btnStyles={styles.uncheckedBtn}
-            onPress={() => console.log('unchecked')}
+            onPress={() => changeStatus(task)}
+            disabled={archived}
           />
         )}
       </View>
       <View style={{flex: 1}}>
         <View style={styles.headingWrap}>
-          <Text style={styles.title}>heading</Text>
+          <Text style={styles.title}>{task.text}</Text>
 
-          <AppButton
-            btnStyles={styles.unfoldBtn}
-            onPress={() => setIsUnfold(!isUnfold)}>
-            <IconComponent iconName={IconsNames.UNFOLD} size={18} />
-          </AppButton>
-          {!isUnfold && (
+          {task.detailes && (
+            <AppButton
+              btnStyles={styles.unfoldBtn}
+              onPress={() => setIsUnfold(!isUnfold)}>
+              <IconComponent iconName={IconsNames.UNFOLD} size={18} />
+            </AppButton>
+          )}
+          {!isUnfold && !archived && (
             <View style={styles.moreBtn}>
               <MyContextMenu
                 contextMenuData={[
                   {title: 'edit', func: () => toEditScreen()},
-                  {title: 'delete', func: () => console.warn('delete task')},
+                  {title: 'delete', func: () => onPressDelete()},
                 ]}
               />
             </View>
           )}
         </View>
-        {isUnfold && (
-          <Text style={styles.description}>
-            description very long description and so on description very long
-            description and so on
-          </Text>
-        )}
-        {isUnfold && (
+        {isUnfold && <Text style={styles.description}>{task.detailes}</Text>}
+        {isUnfold && !archived && (
           <View style={styles.footerWrap}>
             <AppButton
               text="edit"
               btnStyles={styles.footerEditBtn}
               textStyles={styles.footerTextEditBtn}
+              onPress={toEditScreen}
             />
             <AppButton
               text="delete"
               btnStyles={styles.footerDelBtn}
               textStyles={{...size.sm}}
+              onPress={onPressDelete}
             />
           </View>
         )}

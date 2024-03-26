@@ -8,18 +8,14 @@ import {AppButton} from '../../modules/ui/AppButton';
 import {colors} from '../../config/colors';
 import {AuthScreenNavigationProp} from '../../navigation/stack/AuthStackNavigator';
 import {useNavigation} from '@react-navigation/native';
+import {ImageLogoComponent} from '../../components/auth/ImageLogoComponent';
 
 export const LoginScreen = () => {
   const navigation = useNavigation<AuthScreenNavigationProp>();
   return (
     <ScreenWrapper>
       <View style={styles.screenWrap}>
-        <View style={styles.imageWrap}>
-          <Image
-            source={require('../../assets/images/notes.png')}
-            style={styles.image}
-          />
-        </View>
+        <ImageLogoComponent />
 
         <FormLogin />
         <AppButton
@@ -41,16 +37,5 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     gap: 16,
     padding: 10,
-  },
-  imageWrap: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '20%',
-  },
-  image: {
-    width: 48,
-    height: 48,
-    marginTop: 24,
   },
 });
