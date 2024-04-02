@@ -38,7 +38,11 @@ export const CataloguesScreen = () => {
   const setActiveCatalogue = useCatalogueStore(s => s.setActiveCatalogue);
   const [searchQuery, setSearchQuery] = useState('');
   const {deleteData, updateData} = useUpdateData();
-  const {err, loading, createData} = useCreateData();
+
+  const successCreateCallback = (id: string) => {
+    setActiveCatalogue(id);
+  };
+  const {err, loading, createData} = useCreateData(successCreateCallback);
   const {data: folders} = useGetDataById<Folder>(
     CollectionNames.FOLDERS,
     user?.uid,

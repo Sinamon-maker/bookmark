@@ -75,11 +75,12 @@ const styles = StyleSheet.create({
   actionTaskWrap: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     paddingBottom: 10,
     backgroundColor: colors.primary,
     borderRadius: 4,
     paddingRight: 4,
+    paddingTop: 8,
   },
   addBtn: {
     alignSelf: 'flex-start',

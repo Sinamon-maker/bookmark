@@ -25,7 +25,7 @@ export const FolderModal = ({
   activeFolder,
   setActiveFolder,
 }: FolderModalProps) => {
-  const [searchQuery, setSearchQuery] = useState();
+  const [searchQuery, setSearchQuery] = useState('');
   const onChangeSearch = (val: string) => {
     setSearchQuery(val);
   };
@@ -35,6 +35,9 @@ export const FolderModal = ({
     console.log('select folder');
     closeModal();
   };
+  const filteredFilders = folders.filter(folder =>
+    folder.title.toLowerCase().includes(searchQuery.toLowerCase()),
+  );
 
   return (
     <Modal
@@ -53,12 +56,16 @@ export const FolderModal = ({
           />
         </AppButton>
         {folders.length > 3 && (
-          <SearchInput width={90} onChangeText={onChangeSearch} />
+          <SearchInput
+            width={90}
+            onChangeText={onChangeSearch}
+            value={searchQuery}
+          />
         )}
         <FlatList
           ListEmptyComponent={<EmptyComponent title={emptyText.notFound} />}
           style={{borderRadius: 8}}
-          data={folders}
+          data={filteredFilders}
           keyExtractor={item => item.id}
           renderItem={({item}) => (
             <View style={styles.folderItem}>

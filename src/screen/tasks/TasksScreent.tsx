@@ -57,7 +57,6 @@ export const TasksScreen = () => {
     CollectionNames.FOLDERS,
     user?.uid,
   );
-  console.log('LLLL', loaderFolders && loaderCatalogues);
 
   const firstEntry = folders.length === 0 ? true : false;
 
@@ -101,7 +100,7 @@ export const TasksScreen = () => {
     <ScreenWrapper>
       <View style={styles.screenWrap}>
         <FilterComponent
-          options={folders}
+          options={folders.sort((a, b) => a.createdAt - b.createdAt)}
           onPress={navigateToFolders}
           selected={activeFolder}
           placeholder="Choose folder"

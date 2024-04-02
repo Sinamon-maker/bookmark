@@ -8,7 +8,11 @@ export type SearchInputProps = BaseInputProps;
 
 export const SearchInput = ({...rest}: SearchInputProps) => {
   return (
-    <BaseInput placeholder="Search" type="small" {...rest}>
+    <BaseInput
+      placeholder="Search"
+      autoCapitalize="none"
+      type="small"
+      {...rest}>
       <IconComponent
         iconName={IconsNames.SEARCH}
         color={colors.secondary}

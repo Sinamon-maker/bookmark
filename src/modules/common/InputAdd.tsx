@@ -4,6 +4,7 @@ import {AppButton} from '../ui/AppButton';
 import {BaseInput} from '../ui/BaseInput';
 import {IconComponent} from '../ui/IconComponent';
 import {StyleSheet} from 'react-native';
+import {Keyboard} from 'react-native';
 
 export type InputAddProps = {
   placeholder?: string;
@@ -20,6 +21,7 @@ export const InputAdd = ({submit, placeholder = ''}: InputAddProps) => {
   const onSubmit = () => {
     submit(string);
     clearInput();
+    Keyboard.dismiss();
   };
   return (
     <BaseInput

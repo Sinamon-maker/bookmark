@@ -2,7 +2,7 @@ import {useState} from 'react';
 import DocumentData from '@react-native-firebase/firestore';
 import firestore from '@react-native-firebase/firestore';
 
-export const useCreateData = <T>() => {
+export const useCreateData = <T>(func?: (id: string) => void) => {
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState('');
 
@@ -11,7 +11,8 @@ export const useCreateData = <T>() => {
       setLoading(true);
       firestore()
         .collection(collectionName)
-        .add(val as typeof DocumentData);
+        .add(val as typeof DocumentData)
+        .then(newDoc => func && func(newDoc.id));
       setLoading(false);
       return 'ok';
     } catch (error) {

@@ -26,7 +26,11 @@ export const FolderScreen = () => {
   const setActiveFolder = useCatalogueStore(s => s.setActiveFolder);
   const setActiveCatalogue = useCatalogueStore(s => s.setActiveCatalogue);
   const [searchQuery, setSearchQuery] = useState('');
-  const {err, loading, createData} = useCreateData();
+
+  const successCreateCallback = (id: string) => {
+    setActiveFolder(id);
+  };
+  const {err, loading, createData} = useCreateData(successCreateCallback);
   const {
     err: errDel,
     deleteData,
@@ -38,9 +42,9 @@ export const FolderScreen = () => {
     user?.uid,
   );
 
-  const filteredFolders = folders.filter(folder =>
-    folder.title.toLowerCase().includes(searchQuery),
-  );
+  const filteredFolders = folders
+    .sort((a, b) => a.createdAt - b.createdAt)
+    .filter(folder => folder.title.toLowerCase().includes(searchQuery));
 
   const onChangeSearch = (val: string) => {
     setSearchQuery(val);
@@ -86,6 +90,7 @@ export const FolderScreen = () => {
             }
             style={styles.list}
             data={filteredFolders}
+            horizontal={false}
             numColumns={3}
             keyExtractor={item => item.id}
             renderItem={({item}) => (
@@ -126,7 +131,9 @@ const styles = StyleSheet.create({
   },
   listItemWrap: {
     width: '33.3%',
+    height: 120,
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 6,
   },
 });
