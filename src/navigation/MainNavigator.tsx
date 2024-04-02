@@ -7,7 +7,16 @@ import {IconComponent} from '../modules/ui/IconComponent';
 import {IconsNames} from '../config/constants';
 import {colors} from '../config/colors';
 
+type TabBarIconProps = {
+  color: string;
+  size?: number;
+  iconName: IconsNames;
+};
+
 export const Tab = createBottomTabNavigator();
+const TabBarIcon = ({color, size, iconName}: TabBarIconProps) => {
+  return <IconComponent iconName={iconName} color={color} size={size} />;
+};
 
 export const MainTabNavigator = () => {
   return (
@@ -27,7 +36,7 @@ export const MainTabNavigator = () => {
         options={{
           tabBarLabel: 'Tasks',
           tabBarIcon: ({color, size}) => (
-            <IconComponent iconName={IconsNames.TASKS} color={color} />
+            <TabBarIcon color={color} size={size} iconName={IconsNames.TASKS} />
           ),
         }}
       />

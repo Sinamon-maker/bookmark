@@ -19,7 +19,6 @@ import {FolderChooseButton} from '../../components/catalogues/FolderChooseButton
 import {InputAdd} from '../../modules/common/InputAdd';
 
 import {EmptyComponent} from '../../modules/common/EmptyComponent';
-import {Separator} from '../../modules/common/Separator';
 import userStore from '../../store/userStore';
 import useCatalogueStore from '../../store/useCatalogueStore';
 import {useCreateData} from '../../api/useCreateData';
@@ -131,7 +130,7 @@ export const CataloguesScreen = () => {
                   title={
                     catalogues.length === 0
                       ? emptyText.noCatalogues
-                      : emptyText.notFound
+                      : emptyText.noFilteredCatalogues
                   }
                 />
               }

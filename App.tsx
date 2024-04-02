@@ -52,12 +52,12 @@ function App(): React.JSX.Element {
   }
   return (
     <>
-      {user ? (
+      {!user ? (
+        <AuthNavigator />
+      ) : (
         <NavigationContainer>
           <MainTabNavigator />
         </NavigationContainer>
-      ) : (
-        <AuthNavigator />
       )}
     </>
   );

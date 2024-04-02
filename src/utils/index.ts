@@ -9,6 +9,7 @@ export const emptyText = {
   noFolders: 'No folders yet. Start creating!',
   notFound: 'Nothing found',
   noCatalogues: 'No Catalogues yet. Start creating!',
+  noFilteredCatalogues: 'No catalogues',
   noTasks: 'No tasks within ths catalogue',
   chooseCatalogue: 'Choose a Catalogue or create new one',
   chooseFolder: 'Choose folder',

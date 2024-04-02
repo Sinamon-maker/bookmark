@@ -19,7 +19,7 @@ export const WelcomeScreen = () => {
         style={styles.wrap}>
         <View style={styles.imageWrap}>
           <Image
-            source={require('../../assets/images/notes.png')}
+            source={require('../../assets/images/picture4.png')}
             style={styles.image}
           />
         </View>
@@ -51,11 +51,11 @@ const styles = StyleSheet.create({
   imageWrap: {
     flexGrow: 1,
     alignItems: 'center',
-    marginTop: 4,
+    marginTop: 20,
   },
   image: {
-    width: 48,
-    height: 48,
+    width: 100,
+    height: 100,
     marginTop: 24,
   },
   btnWrap: {

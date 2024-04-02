@@ -5,7 +5,7 @@ export const ImageLogoComponent = () => {
   return (
     <View style={styles.imageWrap}>
       <Image
-        source={require('../../assets/images/notes.png')}
+        source={require('../../assets/images/picture4.png')}
         style={styles.image}
       />
     </View>
@@ -20,8 +20,9 @@ const styles = StyleSheet.create({
     height: '20%',
   },
   image: {
-    width: 48,
-    height: 48,
-    marginTop: 24,
+    width: 80,
+    height: 80,
+    marginTop: 14,
+    marginBottom: 14,
   },
 });
