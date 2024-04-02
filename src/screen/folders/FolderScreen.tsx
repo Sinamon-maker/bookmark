@@ -19,6 +19,7 @@ import {emptyText} from '../../utils';
 import {useCreateData} from '../../api/useCreateData';
 import {ErrorComponent} from '../../modules/common/ErrorComponent';
 import {useUpdateData} from '../../api/useUpdateData';
+import {LoaderAppScreen} from '../LoaderAppScreen';
 
 export const FolderScreen = () => {
   const user = userStore(s => s.user);
@@ -37,7 +38,7 @@ export const FolderScreen = () => {
     massDeleteCatalogues,
     updateData,
   } = useUpdateData();
-  const {data: folders} = useGetDataById<Folder>(
+  const {data: folders, loading: loadingFolders} = useGetDataById<Folder>(
     CollectionNames.FOLDERS,
     user?.uid,
   );
@@ -73,6 +74,9 @@ export const FolderScreen = () => {
     deleteData(CollectionNames.FOLDERS, val);
     massDeleteCatalogues(CollectionNames.Catalogues, val);
   };
+  if (loadingFolders) {
+    return <LoaderAppScreen />;
+  }
   return (
     <ScreenWrapper>
       <View style={styles.screenWrap}>

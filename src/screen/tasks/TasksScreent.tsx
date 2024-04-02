@@ -78,7 +78,12 @@ export const TasksScreen = () => {
 
   const emptyTextRender = (folder: string, catalogue: string): ReactNode => {
     if (!folder) {
-      return <FirstEntry text={emptyText.chooseFolder} />;
+      return (
+        <FirstEntry
+          text={emptyText.chooseFolder}
+          onPressStart={navigateToFolders}
+        />
+      );
     } else if (filteredByFolderCatalogues.length === 0) {
       return (
         <FirstEntry
@@ -87,7 +92,12 @@ export const TasksScreen = () => {
         />
       );
     } else if (!catalogue) {
-      return <FirstEntry text={emptyText.chooseCatalogue} />;
+      return (
+        <FirstEntry
+          text={emptyText.chooseCatalogue}
+          onPressStart={navigateToCatalogues}
+        />
+      );
     } else {
       return null;
     }

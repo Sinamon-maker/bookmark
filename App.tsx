@@ -23,14 +23,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import {LoaderScreen} from './src/screen/LoaderScreen';
 import {LoaderAppScreen} from './src/screen/LoaderAppScreen';
+import SplashScreen from 'react-native-splash-screen';
 
 function App(): React.JSX.Element {
   const setUser = userStore(s => s.setUser);
   const user = userStore(s => s.user);
   const [initializing, setInitializing] = useState(true);
-  // useEffect(() => {
-  //   SplashScreen.hide();
-  // }, []);
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   useEffect(() => {
     const subscriber = auth().onAuthStateChanged(userState => {
       if (userState !== null) {
