@@ -52,9 +52,10 @@ const styles = StyleSheet.create({
     borderColor: colors.secondary,
     borderRadius: 8,
     backgroundColor: colors.superLight,
+
     overflow: 'hidden',
     position: 'absolute',
-    minHeight: 130,
+    minHeight: 140,
     height: 'auto',
     maxHeight: '70%',
 

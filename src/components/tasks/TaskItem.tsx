@@ -61,7 +61,13 @@ export const TaskItem = ({
       </View>
       <View style={{flex: 1}}>
         <View style={styles.headingWrap}>
-          <Text style={styles.title}>{task.text}</Text>
+          <Text
+            style={[
+              styles.title,
+              {textDecorationLine: task.status ? 'line-through' : 'none'},
+            ]}>
+            {task.text}
+          </Text>
 
           {task.detailes && (
             <AppButton

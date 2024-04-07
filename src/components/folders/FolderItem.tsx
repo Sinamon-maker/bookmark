@@ -44,43 +44,41 @@ export const FolderItem = ({
   };
   return (
     <>
-      <Pressable onPress={onPressFolder}>
-        <View style={{flex: 1}}>
-          <View
-            style={[
-              styles.folderItemWrap,
-              Platform.OS === 'ios'
-                ? styles.shadowIosProp
-                : styles.elevationAndroid,
-            ]}>
-            <View style={styles.menuBtn}>
-              <MyContextMenu
-                contextMenuData={[
-                  {title: 'edit', func: () => setModalOpen(true)},
-                  {title: 'delete', func: () => onPressDelete()},
-                ]}
-              />
-            </View>
-            <View style={{marginTop: 10}}>
-              <IconComponent
-                iconName={
-                  isActiveFolder ? IconsNames.OPENFOLDER : IconsNames.FOLDER
-                }
-                color={colors.secondary}
-                size={40}
-              />
-            </View>
-            <Text style={styles.text}>{folder.title}</Text>
+      <View style={{flex: 1}}>
+        <View
+          style={[
+            styles.folderItemWrap,
+            Platform.OS === 'ios'
+              ? styles.shadowIosProp
+              : styles.elevationAndroid,
+          ]}>
+          <View style={styles.menuBtn}>
+            <MyContextMenu
+              contextMenuData={[
+                {title: 'edit', func: () => setModalOpen(true)},
+                {title: 'delete', func: () => onPressDelete()},
+              ]}
+            />
           </View>
+          <AppButton btnStyles={styles.btnFolderStyles} onPress={onPressFolder}>
+            <IconComponent
+              iconName={
+                isActiveFolder ? IconsNames.OPENFOLDER : IconsNames.FOLDER
+              }
+              color={colors.secondary}
+              size={40}
+            />
+          </AppButton>
+          <Text style={styles.text}>{folder.title}</Text>
         </View>
-        <ModalEdit
-          modalFolderOpen={modalOpen}
-          closeModal={() => setModalOpen(false)}
-          placeholder="Enter new name"
-          previousValue={folder.title}
-          submit={submit}
-        />
-      </Pressable>
+      </View>
+      <ModalEdit
+        modalFolderOpen={modalOpen}
+        closeModal={() => setModalOpen(false)}
+        placeholder="Enter new name"
+        previousValue={folder.title}
+        submit={submit}
+      />
     </>
   );
 };
@@ -105,6 +103,11 @@ const styles = StyleSheet.create({
   elevationAndroid: {
     elevation: 14,
     shadowColor: '#000000',
+  },
+  btnFolderStyles: {
+    marginTop: 6,
+    paddingVertical: 0,
+    padding: 6,
   },
   menuBtn: {
     position: 'absolute',

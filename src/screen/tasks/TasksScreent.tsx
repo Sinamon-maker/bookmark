@@ -1,16 +1,13 @@
-import React, {ReactNode, useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import React, {ReactNode} from 'react';
+import {StyleSheet, View} from 'react-native';
 import {ScreenWrapper} from '../../modules/common/ScreenWrapper';
-import {TaskItem} from '../../components/tasks/TaskItem';
+
 import {colors} from '../../config/colors';
-import {TaskSorting} from '../../components/tasks/TaskSorting';
+
 import {FilterComponent} from '../../components/tasks/FilterCompnent';
 import {TasksScreenNavigationProp} from '../../navigation/stack/TaskStackNavigator';
 import {useNavigation} from '@react-navigation/native';
-import {tasks} from '../../data/data';
-import {EmptyComponent} from '../../modules/common/EmptyComponent';
-import {Separator} from '../../modules/common/Separator';
-import {InputAdd} from '../../modules/common/InputAdd';
+
 import {FirstEntry} from '../../components/tasks/FirstEntry';
 import {emptyText, firstEntryText} from '../../utils';
 import useCatalogueStore from '../../store/useCatalogueStore';
@@ -18,29 +15,9 @@ import userStore from '../../store/userStore';
 import {useGetDataById} from '../../api/useGetDataById';
 import {Data, Folder} from '../../config/types';
 import {CollectionNames} from '../../config/constants';
-import {folders2} from '../../data/data';
-import {Select} from '../../modules/select/Select';
+
 import {TaskContent} from '../../components/tasks/TasksContent';
 import {LoaderScreen} from '../LoaderScreen';
-
-export const folders3 = [
-  {
-    archived: false,
-    createdAt: 1711108081432,
-    displayName: 'piter',
-    folder: 'VMh3qwwkWqauQfTQ02YZ',
-    id: '74vPPVnIZlUDwwMl8wU0',
-    tasks: [],
-    title: 'RNproject',
-    userId: 'f3pcxz8vuLeC6JFOb174hTsKsX63',
-  },
-  {
-    createdAt: 1711102187946,
-    id: 'VMh3qwwkWqauQfTQ02YZ',
-    title: 'Favorites',
-    userId: 'f3pcxz8vuLeC6JFOb174hTsKsX63',
-  },
-];
 
 export const TasksScreen = () => {
   const navigation = useNavigation<TasksScreenNavigationProp>();

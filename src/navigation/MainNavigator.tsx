@@ -46,9 +46,12 @@ export const MainTabNavigator = () => {
         options={{
           tabBarLabel: 'Settings',
           tabBarIcon: ({color, size}) => (
-            <IconComponent iconName={IconsNames.ACCOUNT} color={color} />
+            <IconComponent
+              iconName={IconsNames.ACCOUNT}
+              color={color}
+              size={size}
+            />
           ),
-          tabBarBadge: 3,
         }}
       />
     </Tab.Navigator>

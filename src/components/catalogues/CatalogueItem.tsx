@@ -45,9 +45,14 @@ export const CatalogueItem = ({
 
   const toArchive = () => {
     if (data.tasks.length === 0) {
-      Alert.alert(alertText.archivation, alertText.toArchive, [{text: 'Ok'}]);
+      Alert.alert(alertText.archivation, alertText.archiveWithNoTasks, [
+        {text: 'Ok'},
+      ]);
     } else {
-      onArchiveCatalogue(data.id);
+      Alert.alert(alertText.archivation, alertText.archiveWithTasks, [
+        {text: 'Ok', onPress: () => onArchiveCatalogue(data.id)},
+        {text: 'Cancel'},
+      ]);
     }
   };
   const contextMenuData = (archived: boolean) => {
@@ -64,40 +69,37 @@ export const CatalogueItem = ({
 
   return (
     <>
-      <Pressable onPress={onItemPress}>
-        <View
-          style={[
-            styles.itemWrap,
-            {
-              borderColor:
-                data.id === activeCatalogue
-                  ? colors.additional
-                  : colors.primary,
-            },
-          ]}>
-          <Text style={styles.number}>{index + 1}.</Text>
-          <View style={{flex: 1}}>
-            <View style={styles.itemContent}>
+      <View
+        style={[
+          styles.itemWrap,
+          {
+            borderColor:
+              data.id === activeCatalogue ? colors.additional : colors.primary,
+          },
+        ]}>
+        <Text style={styles.number}>{index + 1}.</Text>
+        <View style={{flex: 1, flexDirection: 'row'}}>
+          <View style={styles.itemContent}>
+            <Pressable onPress={onItemPress} style={{flex: 1}}>
               <Text style={styles.title}>{data.title}</Text>
-              <View style={styles.menuBtn}>
-                <MyContextMenu
-                  contextMenuData={contextMenuData(data.archived)}
-                />
-              </View>
-            </View>
-            <Text style={{...size.xs, color: colors.additional}}>
-              {convertTime(data.createdAt)}
-            </Text>
+
+              <Text style={{...size.xs, color: colors.additional}}>
+                {convertTime(data.createdAt)}
+              </Text>
+            </Pressable>
+          </View>
+          <View style={styles.menuBtn}>
+            <MyContextMenu contextMenuData={contextMenuData(data.archived)} />
           </View>
         </View>
-        <ModalEdit
-          modalFolderOpen={modalOpen}
-          closeModal={() => setModalOpen(false)}
-          placeholder="Enter new name"
-          previousValue={data.title}
-          submit={submit}
-        />
-      </Pressable>
+      </View>
+      <ModalEdit
+        modalFolderOpen={modalOpen}
+        closeModal={() => setModalOpen(false)}
+        placeholder="Enter new name"
+        previousValue={data.title}
+        submit={submit}
+      />
     </>
   );
 };
@@ -127,6 +129,7 @@ const styles = StyleSheet.create({
   itemContent: {
     flex: 1,
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   title: {
     flex: 1,
@@ -141,5 +144,7 @@ const styles = StyleSheet.create({
     height: 24,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 8,
+    padding: 2,
   },
 });

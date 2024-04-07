@@ -70,9 +70,18 @@ export const TaskContent = ({activeCatalogue}: TaskContentProps) => {
       />
       <View style={{flex: 1}}>
         <FlatList
-          ListEmptyComponent={<EmptyComponent title={emptyText.noTasks} />}
+          ListEmptyComponent={
+            <EmptyComponent
+              title={
+                taskList.length === 0
+                  ? emptyText.noTasksWithinCatalogue
+                  : emptyText.noTasks
+              }
+            />
+          }
           style={{
             borderRadius: 8,
+            paddingRight: 6,
           }}
           data={sortedList}
           keyExtractor={item => item.created.toString()}

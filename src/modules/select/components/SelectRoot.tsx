@@ -11,7 +11,7 @@ export type SelectContextType = {
   open: boolean;
   toggleSelect: () => void;
   handleSelect: (val: string, label: string) => void;
-  innerSelected: string;
+  innerSelected: string | {id: string; title: string};
   selected?: string;
   fadeAnim: Animated.Value | number;
   DropdownButton: React.RefObject<TouchableOpacity> | null;
@@ -104,7 +104,11 @@ export const SelectRoot = ({
     setSelected(label);
     onSelect && onSelect(val);
   };
-  console.log('innerSelected', initialValue, innerSelected);
+
+  useEffect(() => {
+    setSelected(initialValue);
+  }, [initialValue]);
+
   return (
     <SelectContext.Provider
       value={{

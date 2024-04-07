@@ -34,7 +34,7 @@ export const TaskSorting = ({
           <IconComponent iconName={IconsNames.ADD} size={24} />
         </AppButton>
       )}
-      {archived && <Text style={styles.archivedText}>Archived tsks</Text>}
+      {archived && <Text style={styles.archivedText}>Archived</Text>}
       <View style={styles.sortingWrap}>
         <AppButton
           background={
@@ -95,6 +95,8 @@ const styles = StyleSheet.create({
     ...size.sm,
     fontFamily: font.InterRegular,
     letterSpacing: 0.2,
+    color: colors.textMain,
+    marginLeft: 8,
   },
   sortBtn: {
     // backgroundColor: colors.secondary,

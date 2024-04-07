@@ -1,18 +1,12 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Modal, Text, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import {colors} from '../../config/colors';
 import {ScreenWrapper} from '../../modules/common/ScreenWrapper';
 import {CatalogueItem} from '../../components/catalogues/CatalogueItem';
 import {SearchInput} from '../../modules/ui/SearchInput';
-import {AppButton} from '../../modules/ui/AppButton';
-import {IconComponent} from '../../modules/ui/IconComponent';
-import {
-  CollectionNames,
-  IconsNames,
-  SortCataloguesParam,
-} from '../../config/constants';
-import {BaseInput} from '../../modules/ui/BaseInput';
-import {font, size} from '../../config/fonts';
+
+import {CollectionNames, SortCataloguesParam} from '../../config/constants';
+
 import {FolderModal} from '../../components/catalogues/FolderModal';
 import {FolderChooseButton} from '../../components/catalogues/FolderChooseButton';
 
@@ -106,7 +100,7 @@ export const CataloguesScreen = () => {
     setActiveFolder(val);
   };
   const archiveCatalogue = (id: string) => {
-    updateData(CollectionNames.Catalogues, {arcived: true}, id);
+    updateData(CollectionNames.Catalogues, {archived: true}, id);
   };
 
   const onPressSort = (sortParam: SortCataloguesParam) => {
@@ -138,7 +132,7 @@ export const CataloguesScreen = () => {
                   }
                 />
               }
-              style={{borderRadius: 8}}
+              style={{borderRadius: 8, paddingRight: 6}}
               data={filteredCatalogues}
               keyExtractor={item => item.id}
               renderItem={({item, index}) => (
@@ -163,7 +157,7 @@ export const CataloguesScreen = () => {
       <FolderModal
         modalFolderOpen={modalFolderOpen}
         closeModal={closeModal}
-        folders={folders}
+        folders={folders.sort((a, b) => a.createdAt - b.createdAt)}
         activeFolder={activeFolder}
         setActiveFolder={onSelectFolder}
       />

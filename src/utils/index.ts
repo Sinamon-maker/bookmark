@@ -10,7 +10,8 @@ export const emptyText = {
   notFound: 'Nothing found',
   noCatalogues: 'No Catalogues yet. Start creating!',
   noFilteredCatalogues: 'No catalogues',
-  noTasks: 'No tasks within ths catalogue',
+  noTasksWithinCatalogue: 'No tasks within this catalogue',
+  noTasks: 'No tasks',
   chooseCatalogue: 'Choose a Catalogue or create new one',
   chooseFolder: 'Choose folder',
 };
@@ -23,7 +24,9 @@ export const alertText = {
     'Are you shure yuo are going to delete Catalogue? All tasks will be deleted too.',
   deleteTask: 'Are you sure you going to delete this task?',
   archivation: 'Atention!',
-  toArchive: 'You can not archive catalog without task',
+  archiveWithNoTasks: 'You can not archive catalog without task',
+  archiveWithTasks:
+    'This is a one way operation. You can not get archived catalogue to current back again',
 };
 
 export const convertTime = (date: number) => {

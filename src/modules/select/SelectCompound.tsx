@@ -1,20 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {
   SelectContent,
   SelectItem,
   SelectRoot,
   SelectTrigger,
 } from './components';
-import {
-  FlatList,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {FlatList} from 'react-native';
 import {IconsNames} from '../../config/constants';
-import {IconComponent} from '../ui/IconComponent';
 
 type SelectOption = {
   title: string;
@@ -53,7 +45,6 @@ export const SelectCompound = ({
         if (typeof initial === 'string') {
           return initial;
         } else {
-          console.log('hfhjfjh', initial.title);
           return initial.title;
         }
       }
@@ -78,6 +69,7 @@ export const SelectCompound = ({
       <SelectContent>
         <FlatList
           data={options}
+          style={{marginBottom: 16}}
           keyExtractor={item => item.id}
           renderItem={({item}) => {
             return (
@@ -89,10 +81,3 @@ export const SelectCompound = ({
     </SelectRoot>
   );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    height: 'auto',
-    maxHeight: 600,
-  },
-});
