@@ -13,12 +13,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import {LoaderAppScreen} from './src/screen/LoaderAppScreen';
 import SplashScreen from 'react-native-splash-screen';
+import crashlytics from '@react-native-firebase/crashlytics';
+import {Logs} from './src/config/constants';
 
 function App(): React.JSX.Element {
   const setUser = userStore(s => s.setUser);
   const user = userStore(s => s.user);
   const [initializing, setInitializing] = useState(true);
   useEffect(() => {
+    crashlytics().log(Logs.APP_MOUNTED);
     SplashScreen.hide();
   }, []);
   useEffect(() => {

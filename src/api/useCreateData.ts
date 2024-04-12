@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import DocumentData from '@react-native-firebase/firestore';
 import firestore from '@react-native-firebase/firestore';
+import crashlytics from '@react-native-firebase/crashlytics';
 
 export const useCreateData = <T>(func?: (id: string) => void) => {
   const [loading, setLoading] = useState(false);
@@ -18,6 +19,7 @@ export const useCreateData = <T>(func?: (id: string) => void) => {
     } catch (error) {
       setLoading(false);
       if (error instanceof Error) {
+        crashlytics().recordError(error);
         setError(error.message);
       }
     }

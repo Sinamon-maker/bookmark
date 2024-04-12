@@ -1,5 +1,7 @@
 import auth from '@react-native-firebase/auth';
 import {useState} from 'react';
+import crashlytics from '@react-native-firebase/crashlytics';
+import {Logs} from '../config/constants';
 
 const useLogin = () => {
   const [err, setError] = useState('');
@@ -10,7 +12,8 @@ const useLogin = () => {
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        console.log('User successfuly registered!');
+        crashlytics().log(Logs.LOGGEDIN);
+        console.log('User successfuly logged in!');
         setLoading(false);
       })
       .catch(error => {
@@ -27,6 +30,7 @@ const useLogin = () => {
           console.log(error.code, error);
           setError('Something wrong, try later');
         }
+        crashlytics().recordError(error);
       })
       .finally(() => {
         setLoading(false);

@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import DocumentData from '@react-native-firebase/firestore';
 import firestore from '@react-native-firebase/firestore';
+import crashlytics from '@react-native-firebase/crashlytics';
+import {Logs} from '../config/constants';
 
 export const useUpdateData = <T>() => {
   const [loading, setLoading] = useState(false);
@@ -18,6 +20,7 @@ export const useUpdateData = <T>() => {
     } catch (error) {
       setLoading(false);
       if (error instanceof Error) {
+        crashlytics().recordError(error);
         setError(error.message);
       }
     }
@@ -30,6 +33,7 @@ export const useUpdateData = <T>() => {
       .delete()
       .then(() => {
         console.log('User deleted!');
+        crashlytics().log(`${Logs.DELETE_BY_ID} ${id} ${collectionName}`);
       });
   };
 
@@ -50,11 +54,14 @@ export const useUpdateData = <T>() => {
   }
 
   const massDeleteCatalogues = (collsectionName: string, filderId: string) => {
-    massDeleteUsers(collsectionName, filderId).then(() =>
+    massDeleteUsers(collsectionName, filderId).then(() => {
+      crashlytics().log(
+        `${Logs.DELETE_COLLECTION} ${collsectionName} with folderId ${filderId}`,
+      );
       console.log(
         'All catalogues from this folder deleted in a single batch operation.',
-      ),
-    );
+      );
+    });
   };
 
   return {loading, err, updateData, deleteData, massDeleteCatalogues};

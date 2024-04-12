@@ -35,3 +35,16 @@ export enum CollectionNames {
   Catalogues = 'tasks', //catalogues
   FOLDERS = 'folders',
 }
+
+export enum Logs {
+  APP_MOUNTED = 'App mounted',
+  EMAIL_CHANGED = 'Email successfuly changed!',
+  PASSWORD_CHANGED = 'User successfuly changed password!',
+  LOGGEDIN = 'User successfuly logged in!',
+  SEND_EMAIL_PASSWORDRESET = 'Sended email to reset password',
+  RESET_PASSWORD = 'Successfully changed password',
+  SIGNOUT = 'User succssfuly signout',
+  SIGNUP = 'User successfuly registered',
+  DELETE_BY_ID = 'By ID deleted:',
+  DELETE_COLLECTION = 'Deleted collection:',
+}

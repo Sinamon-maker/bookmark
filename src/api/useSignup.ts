@@ -1,5 +1,7 @@
 import auth from '@react-native-firebase/auth';
 import {useState} from 'react';
+import crashlytics from '@react-native-firebase/crashlytics';
+import {Logs} from '../config/constants';
 
 const useSignup = () => {
   const [err, setError] = useState('');
@@ -14,6 +16,7 @@ const useSignup = () => {
       .createUserWithEmailAndPassword(email, password)
       .then(userCredentials => {
         console.log('User account created & signed in!', userCredentials.user);
+        crashlytics().log(Logs.SIGNUP);
         setLoading(false);
         if (userCredentials.user) {
           userCredentials.user.updateProfile({
@@ -22,6 +25,7 @@ const useSignup = () => {
         }
       })
       .catch(error => {
+        crashlytics().recordError(error);
         if (error.code === 'auth/email-already-in-use') {
           console.log('That email address is already in use!');
           setError('That email address is already in use!');
