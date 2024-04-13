@@ -43,7 +43,6 @@ export const CreateTaskScreen = () => {
     activeCatalogue,
   );
   const taskList = data ? data.tasks : [];
-  console.log('create data', data);
   const createTask = (val: TaskEditValues) => {
     const item = {
       text: val.taskText,
