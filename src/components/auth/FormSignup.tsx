@@ -12,9 +12,7 @@ export const FormSignup = () => {
   const {err, signup, loading} = useSignup();
 
   const submit = (values: FormikValues) => {
-    console.log('1', values, err, loading);
     signup(values.displayName, values.email, values.password);
-    console.log('2', values, err, loading);
   };
   return (
     <AppForm

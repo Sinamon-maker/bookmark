@@ -1,5 +1,7 @@
 import auth from '@react-native-firebase/auth';
 import {useState} from 'react';
+import crashlytics from '@react-native-firebase/crashlytics';
+import {Logs} from '../config/constants';
 
 const useChangeEmail = (func: () => void) => {
   const [err, setError] = useState('');
@@ -15,11 +17,12 @@ const useChangeEmail = (func: () => void) => {
       .then(userCredentials => userCredentials.user?.updateEmail(newEmail))
       .then(() => {
         console.log('Email successfuly changed!');
+        crashlytics().log(Logs.EMAIL_CHANGED);
         setLoading(false);
         func();
       })
       .catch(error => {
-        console.log(error.code, error);
+        crashlytics().recordError(error);
         setError('Sth wrong');
         setLoading(false);
       });

@@ -32,7 +32,6 @@ export const FolderModal = ({
 
   const selectFolder = (val: string) => {
     setActiveFolder(val);
-    console.log('select folder');
     closeModal();
   };
   const filteredFilders = folders.filter(folder =>

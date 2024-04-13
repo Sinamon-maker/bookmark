@@ -1,5 +1,7 @@
 import auth from '@react-native-firebase/auth';
 import {useState} from 'react';
+import crashlytics from '@react-native-firebase/crashlytics';
+import {Logs} from '../config/constants';
 
 const usePasswordReset = () => {
   const [errEmail, setErrorEmail] = useState('');
@@ -12,6 +14,7 @@ const usePasswordReset = () => {
     auth()
       .sendPasswordResetEmail(email)
       .then(() => {
+        crashlytics().log(Logs.SEND_EMAIL_PASSWORDRESET);
         console.log('User successfuly changed password!');
         setLoading(false);
         setIsEmailSend(true);
@@ -24,6 +27,7 @@ const usePasswordReset = () => {
           return;
         }
         console.log(error.code, error);
+        crashlytics().recordError(error);
         setErrorEmail('Sth wrong');
         setLoading(false);
       });
@@ -34,11 +38,13 @@ const usePasswordReset = () => {
     auth()
       .confirmPasswordReset(code, newPassword)
       .then(() => {
+        crashlytics().log(Logs.RESET_PASSWORD);
         console.log('User successfuly changed password!');
         setLoading(false);
       })
       .catch(error => {
         console.log(error.code, error);
+        crashlytics().recordError(error);
         setErrorPassword('Sth wrong');
         setLoading(false);
       });

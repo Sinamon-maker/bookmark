@@ -24,7 +24,6 @@ export const MyContextMenu = ({contextMenuData}: ContextMenuProps) => {
       actions={actions}
       onPress={e => {
         const index = e.nativeEvent.index;
-        console.log('menu', index);
         contextMenuData[index].func();
       }}>
       <Icon name={IconsNames.MORE_VERT} size={18} color={colors.textMain} />
