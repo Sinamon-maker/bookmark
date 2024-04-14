@@ -2072,19 +2072,21 @@ PODS:
     - React-logger (= 0.73.5)
     - React-perflogger (= 0.73.5)
   - RecaptchaInterop (100.0.0)
-  - RNFBApp (19.2.1):
+  - RNCAsyncStorage (1.23.1):
+    - React-Core
+  - RNFBApp (19.2.2):
     - Firebase/CoreOnly (= 10.24.0)
     - React-Core
-  - RNFBAuth (19.2.1):
+  - RNFBAuth (19.2.2):
     - Firebase/Auth (= 10.24.0)
     - React-Core
     - RNFBApp
-  - RNFBCrashlytics (19.2.1):
+  - RNFBCrashlytics (19.2.2):
     - Firebase/Crashlytics (= 10.24.0)
     - FirebaseCoreExtension
     - React-Core
     - RNFBApp
-  - RNFBFirestore (19.2.1):
+  - RNFBFirestore (19.2.2):
     - Firebase/Firestore (= 10.24.0)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - React-Core
@@ -2151,6 +2153,7 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBCrashlytics (from `../node_modules/@react-native-firebase/crashlytics`)"
@@ -2293,6 +2296,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBAuth:
@@ -2385,10 +2390,11 @@ SPEC CHECKSUMS:
   React-utils: 74fc896195fb41a1f7dcd5737d89be59c1fdccc4
   ReactCommon: ab6655d0224cf39c997ea634d257c609d345e23d
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
-  RNFBApp: 21d32c9dd8e7f8c9cd4fe822105747f5812e23b4
-  RNFBAuth: 12bcb8d2c83afd4e8cbbfdf2897bf5ad96e8cc53
-  RNFBCrashlytics: a9ffeb7a8c8622d227ed08da59584a6fd1ab0647
-  RNFBFirestore: 9837c457be505988f4f7c54890fb46adf44d1215
+  RNCAsyncStorage: 826b603ae9c0f88b5ac4e956801f755109fa4d5c
+  RNFBApp: 91311b27bc9a33e23b76a62825afd1635501018a
+  RNFBAuth: 92172d8976baaa829825017174106e2b2c550319
+  RNFBCrashlytics: c3219ef7a0c779f2428236215781c38e7892f6f9
+  RNFBFirestore: 58f9f2f1d61eadcf16bf6d75737d92ad651bb264
   RNScreens: 97a2a32820e632c5978d75250afa397ed9053910
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: a716eea57d0d3430219c0a5a233e1e93ee931eb7

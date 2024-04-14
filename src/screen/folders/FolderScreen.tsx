@@ -15,7 +15,7 @@ import {CollectionNames} from '../../config/constants';
 import {Folder} from '../../config/types';
 import userStore from '../../store/userStore';
 import useCatalogueStore from '../../store/useCatalogueStore';
-import {emptyText} from '../../utils';
+import {emptyText, onSelectFolder, setToStorage} from '../../utils';
 import {useCreateData} from '../../api/useCreateData';
 import {ErrorComponent} from '../../modules/common/ErrorComponent';
 import {useUpdateData} from '../../api/useUpdateData';
@@ -24,12 +24,11 @@ import {LoaderAppScreen} from '../LoaderAppScreen';
 export const FolderScreen = () => {
   const user = userStore(s => s.user);
   const activeFolder = useCatalogueStore(s => s.activeFolder);
-  const setActiveFolder = useCatalogueStore(s => s.setActiveFolder);
-  const setActiveCatalogue = useCatalogueStore(s => s.setActiveCatalogue);
+
   const [searchQuery, setSearchQuery] = useState('');
 
-  const successCreateCallback = (id: string) => {
-    setActiveFolder(id);
+  const successCreateCallback = async (id: string) => {
+    await onSelectFolder(id);
   };
   const {err, loading, createData} = useCreateData(successCreateCallback);
   const {
@@ -65,14 +64,12 @@ export const FolderScreen = () => {
     return res;
   };
 
-  const onSelectFolder = (val: string) => {
-    setActiveCatalogue('');
-    setActiveFolder(val);
-  };
-
-  const deleteFolder = (val: string) => {
+  const deleteFolder = async (val: string) => {
     deleteData(CollectionNames.FOLDERS, val);
     massDeleteCatalogues(CollectionNames.Catalogues, val);
+    if (activeFolder === val) {
+      await onSelectFolder('');
+    }
   };
   if (loadingFolders) {
     return <LoaderAppScreen />;

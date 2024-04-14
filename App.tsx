@@ -15,11 +15,17 @@ import {LoaderAppScreen} from './src/screen/LoaderAppScreen';
 import SplashScreen from 'react-native-splash-screen';
 import crashlytics from '@react-native-firebase/crashlytics';
 import {Logs} from './src/config/constants';
+import useCatalogueStore from './src/store/useCatalogueStore';
 
 function App(): React.JSX.Element {
   const setUser = userStore(s => s.setUser);
   const user = userStore(s => s.user);
+  const init = useCatalogueStore(s => s.init);
   const [initializing, setInitializing] = useState(true);
+
+  useEffect(() => {
+    init();
+  }, [init]);
   useEffect(() => {
     crashlytics().log(Logs.APP_MOUNTED);
     SplashScreen.hide();
