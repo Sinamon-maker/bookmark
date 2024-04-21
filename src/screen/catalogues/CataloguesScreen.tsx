@@ -18,7 +18,7 @@ import useCatalogueStore from '../../store/useCatalogueStore';
 import {useCreateData} from '../../api/useCreateData';
 import {useGetDataById} from '../../api/useGetDataById';
 import {Data, Folder} from '../../config/types';
-import {emptyText} from '../../utils';
+import {emptyText, onSelectCatalogue, onSelectFolder} from '../../utils';
 import {useUpdateData} from '../../api/useUpdateData';
 import {CatalogueFilters} from '../../components/catalogues/CatalogueFilters';
 
@@ -28,13 +28,11 @@ export const CataloguesScreen = () => {
   const user = userStore(s => s.user);
   const activeCatalogue = useCatalogueStore(s => s.activeCatalogue);
   const activeFolder = useCatalogueStore(s => s.activeFolder);
-  const setActiveFolder = useCatalogueStore(s => s.setActiveFolder);
-  const setActiveCatalogue = useCatalogueStore(s => s.setActiveCatalogue);
   const [searchQuery, setSearchQuery] = useState('');
   const {deleteData, updateData} = useUpdateData();
 
-  const successCreateCallback = (id: string) => {
-    setActiveCatalogue(id);
+  const successCreateCallback = async (id: string) => {
+    await onSelectCatalogue(id);
   };
   const {err, loading, createData} = useCreateData(successCreateCallback);
   const {data: folders} = useGetDataById<Folder>(
@@ -91,14 +89,14 @@ export const CataloguesScreen = () => {
   };
   const deleteCatalogue = async (id: string) => {
     deleteData(CollectionNames.Catalogues, id);
+    if (activeCatalogue === id) {
+      await onSelectCatalogue('');
+    }
   };
   const editCatalogue = (val: string, id: string) => {
     updateData(CollectionNames.Catalogues, {title: val}, id);
   };
-  const onSelectFolder = (val: string) => {
-    setActiveCatalogue('');
-    setActiveFolder(val);
-  };
+
   const archiveCatalogue = (id: string) => {
     updateData(CollectionNames.Catalogues, {archived: true}, id);
   };
@@ -140,7 +138,7 @@ export const CataloguesScreen = () => {
                   data={item}
                   index={index}
                   activeCatalogue={activeCatalogue}
-                  onPressCatalogue={setActiveCatalogue}
+                  onPressCatalogue={onSelectCatalogue}
                   onDeleteCatalogue={deleteCatalogue}
                   onEditCatalogue={editCatalogue}
                   onArchiveCatalogue={archiveCatalogue}

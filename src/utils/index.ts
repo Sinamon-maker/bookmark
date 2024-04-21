@@ -1,3 +1,7 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import crashlytics from '@react-native-firebase/crashlytics';
+import useCatalogueStore from '../store/useCatalogueStore';
+
 export const firstEntryText = {
   createFolderText:
     ' Here will be your list of tasks. First, create a Folder or several Folders. In every folder can be several catalogues that contain your tasks. Folders can be ranamed if you do not choose suitable name from the beginning. Press button to start.',
@@ -40,4 +44,27 @@ export const convertTime = (date: number) => {
   const min = new Date(date).getMinutes();
 
   return `${year}-${month}-${day} ${hours}:${min}`;
+};
+
+export const setToStorage = async (key: string, value: string) => {
+  try {
+    await AsyncStorage.setItem(key, value);
+  } catch (error) {
+    if (error instanceof Error) {
+      crashlytics().recordError(error);
+    }
+  }
+};
+
+export const onSelectFolder = async (val: string) => {
+  useCatalogueStore.setState({activeFolder: val});
+  useCatalogueStore.setState({activeCatalogue: ''});
+  await setToStorage('activeFolder', val);
+  await setToStorage('activeCatalogue', '');
+};
+
+export const onSelectCatalogue = async (val: string) => {
+  useCatalogueStore.setState({activeCatalogue: val});
+
+  await setToStorage('activeCatalogue', val);
 };

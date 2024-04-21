@@ -9,7 +9,12 @@ import {TasksScreenNavigationProp} from '../../navigation/stack/TaskStackNavigat
 import {useNavigation} from '@react-navigation/native';
 
 import {FirstEntry} from '../../components/tasks/FirstEntry';
-import {emptyText, firstEntryText} from '../../utils';
+import {
+  emptyText,
+  firstEntryText,
+  onSelectCatalogue,
+  onSelectFolder,
+} from '../../utils';
 import useCatalogueStore from '../../store/useCatalogueStore';
 import userStore from '../../store/userStore';
 import {useGetDataById} from '../../api/useGetDataById';
@@ -24,8 +29,7 @@ export const TasksScreen = () => {
   const user = userStore(s => s.user);
   const activeFolder = useCatalogueStore(s => s.activeFolder);
   const activeCatalogue = useCatalogueStore(s => s.activeCatalogue);
-  const setActiveFolder = useCatalogueStore(s => s.setActiveFolder);
-  const setActiveCatalogue = useCatalogueStore(s => s.setActiveCatalogue);
+
   const {data: catalogues, loading: loaderCatalogues} = useGetDataById<Data>(
     CollectionNames.Catalogues,
     user?.uid,
@@ -47,11 +51,6 @@ export const TasksScreen = () => {
   const filteredByFolderCatalogues = catalogues.filter(
     catalogue => catalogue.folderId === activeFolder,
   );
-
-  const selectFolder = (val: string) => {
-    setActiveFolder(val);
-    setActiveCatalogue('');
-  };
 
   const emptyTextRender = (folder: string, catalogue: string): ReactNode => {
     if (!folder) {
@@ -91,7 +90,7 @@ export const TasksScreen = () => {
           onPress={navigateToFolders}
           selected={activeFolder}
           placeholder="Choose folder"
-          onSelect={selectFolder}
+          onSelect={onSelectFolder}
         />
 
         <FilterComponent
@@ -99,7 +98,7 @@ export const TasksScreen = () => {
           selected={activeCatalogue}
           onPress={navigateToCatalogues}
           placeholder="Choose Catalogue"
-          onSelect={setActiveCatalogue}
+          onSelect={onSelectCatalogue}
         />
         {firstEntry ? (
           <FirstEntry
