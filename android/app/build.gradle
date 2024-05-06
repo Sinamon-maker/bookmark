@@ -3,6 +3,12 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+project.ext.envConfigFiles = [
+   production: ".env.production",
+   staging: ".env.staging",
+   development: ".env.development"
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 project.ext.vectoricons = [
     iconFontNames: [ 'MaterialIcons.ttf', 'MaterialCommunityIcons.ttf', 'FontAwesome' ] // Specify font files
 ]
@@ -81,6 +87,25 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
+        flavorDimensions "default"
+    productFlavors {
+        production {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.bookmark"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+        }
+        staging {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.bookmark.staging"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+        }
+        development {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.bookmark.development"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+        }
+    }
+
     namespace "com.bookmark"
     defaultConfig {
         applicationId "com.bookmark"
@@ -88,6 +113,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        resValue "string", "build_config_package", "com.bookmark"
     }
     signingConfigs {
         debug {
@@ -100,6 +126,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug', 'release']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.

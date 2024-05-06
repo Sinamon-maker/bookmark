@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "946727483135",
+    "project_id": "todostaging-25cec",
+    "storage_bucket": "todostaging-25cec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946727483135:android:c799438333a97445ffbeca",
+        "android_client_info": {
+          "package_name": "com.bookmark.staging"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvXtShU4THhTRaZ9IR3O7EHQOphnl81Jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

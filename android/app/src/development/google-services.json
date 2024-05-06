@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "991834380318",
+    "project_id": "tododev-39890",
+    "storage_bucket": "tododev-39890.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991834380318:android:05cbfe8ad43c41336bf60f",
+        "android_client_info": {
+          "package_name": "com.bookmark.development"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxW0hHcYJiwTHsXIQWV_WhGqdTZTTnfgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

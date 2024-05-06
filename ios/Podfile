@@ -29,6 +29,7 @@ target 'Bookmark' do
   config = use_native_modules!
   use_frameworks! :linkage => :static
   $RNFirebaseAsStaticFramework = true
+  pod 'GoogleUtilities', :modular_headers => true
   use_react_native!(
     :path => config[:reactNativePath],
     #:hermes_enabled => true,
@@ -44,6 +45,14 @@ target 'Bookmark' do
   target 'BookmarkTests' do
     inherit! :complete
     # Pods for testing
+  end
+
+  target 'BookmarkDevelopment' do
+    inherit! :complete
+  end
+
+  target 'BookmarkStaging' do
+    inherit! :complete
   end
 
   post_install do |installer|

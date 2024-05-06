@@ -48,7 +48,7 @@ export const CreateTaskScreen = () => {
       text: val.taskText,
       detailes: val.detailes,
       status: false,
-      createdAt: +new Date(),
+      created: +new Date(),
     };
     const newTasks = [...taskList, {...item}];
     updateData(CollectionNames.Catalogues, {tasks: newTasks}, activeCatalogue);

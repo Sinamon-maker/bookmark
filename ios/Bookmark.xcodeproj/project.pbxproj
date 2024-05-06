@@ -12,7 +12,61 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D71C06634A8427BBDFDA239 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 507A8EE49E7A40E99DA749A3 /* Inter-SemiBold.ttf */; };
-		442261362BAAFD3500B2B773 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 442261352BAAFD3500B2B773 /* GoogleService-Info.plist */; };
+		44C6EBB12BE916B0001140F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44C6EBB02BE916B0001140F9 /* GoogleService-Info.plist */; };
+		44C6EBB22BE9285E001140F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44C6EBAF2BE91251001140F9 /* GoogleService-Info.plist */; };
+		44C6EBB32BE92869001140F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44C6EBAE2BE91239001140F9 /* GoogleService-Info.plist */; };
+		44E0EBBE2BE8EBFE00669ED2 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		44E0EBBF2BE8EBFE00669ED2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		44E0EBC32BE8EBFE00669ED2 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708C2B9B732F00ED5F13 /* Octicons.ttf */; };
+		44E0EBC42BE8EBFE00669ED2 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707C2B9B732F00ED5F13 /* AntDesign.ttf */; };
+		44E0EBC62BE8EBFE00669ED2 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870892B9B732F00ED5F13 /* Ionicons.ttf */; };
+		44E0EBC72BE8EBFE00669ED2 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870802B9B732F00ED5F13 /* FontAwesome.ttf */; };
+		44E0EBC82BE8EBFE00669ED2 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707D2B9B732F00ED5F13 /* Entypo.ttf */; };
+		44E0EBC92BE8EBFE00669ED2 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870882B9B732F00ED5F13 /* Foundation.ttf */; };
+		44E0EBCA2BE8EBFE00669ED2 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870832B9B732F00ED5F13 /* FontAwesome5_Solid.ttf */; };
+		44E0EBCB2BE8EBFE00669ED2 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708A2B9B732F00ED5F13 /* MaterialCommunityIcons.ttf */; };
+		44E0EBCC2BE8EBFE00669ED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		44E0EBCD2BE8EBFE00669ED2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		44E0EBCE2BE8EBFE00669ED2 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870812B9B732F00ED5F13 /* FontAwesome5_Brands.ttf */; };
+		44E0EBCF2BE8EBFE00669ED2 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870822B9B732F00ED5F13 /* FontAwesome5_Regular.ttf */; };
+		44E0EBD02BE8EBFE00669ED2 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870872B9B732F00ED5F13 /* Fontisto.ttf */; };
+		44E0EBD12BE8EBFE00669ED2 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D95A28DF3024FDB8CC0317A /* Inter-Bold.ttf */; };
+		44E0EBD22BE8EBFE00669ED2 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707E2B9B732F00ED5F13 /* EvilIcons.ttf */; };
+		44E0EBD32BE8EBFE00669ED2 /* FontAwesome6_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870862B9B732F00ED5F13 /* FontAwesome6_Solid.ttf */; };
+		44E0EBD42BE8EBFE00669ED2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708E2B9B732F00ED5F13 /* Zocial.ttf */; };
+		44E0EBD52BE8EBFE00669ED2 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870842B9B732F00ED5F13 /* FontAwesome6_Brands.ttf */; };
+		44E0EBD62BE8EBFE00669ED2 /* FontAwesome6_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870852B9B732F00ED5F13 /* FontAwesome6_Regular.ttf */; };
+		44E0EBD72BE8EBFE00669ED2 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B98B66D7C24DA2BDBB937B /* Inter-Regular.ttf */; };
+		44E0EBD82BE8EBFE00669ED2 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 507A8EE49E7A40E99DA749A3 /* Inter-SemiBold.ttf */; };
+		44E0EBD92BE8EBFE00669ED2 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708D2B9B732F00ED5F13 /* SimpleLineIcons.ttf */; };
+		44E0EBDA2BE8EBFE00669ED2 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707F2B9B732F00ED5F13 /* Feather.ttf */; };
+		44E0EBDB2BE8EBFE00669ED2 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708B2B9B732F00ED5F13 /* MaterialIcons.ttf */; };
+		44E0EBE92BE8EC0F00669ED2 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		44E0EBEA2BE8EC0F00669ED2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		44E0EBEE2BE8EC0F00669ED2 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708C2B9B732F00ED5F13 /* Octicons.ttf */; };
+		44E0EBEF2BE8EC0F00669ED2 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707C2B9B732F00ED5F13 /* AntDesign.ttf */; };
+		44E0EBF12BE8EC0F00669ED2 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870892B9B732F00ED5F13 /* Ionicons.ttf */; };
+		44E0EBF22BE8EC0F00669ED2 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870802B9B732F00ED5F13 /* FontAwesome.ttf */; };
+		44E0EBF32BE8EC0F00669ED2 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707D2B9B732F00ED5F13 /* Entypo.ttf */; };
+		44E0EBF42BE8EC0F00669ED2 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870882B9B732F00ED5F13 /* Foundation.ttf */; };
+		44E0EBF52BE8EC0F00669ED2 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870832B9B732F00ED5F13 /* FontAwesome5_Solid.ttf */; };
+		44E0EBF62BE8EC0F00669ED2 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708A2B9B732F00ED5F13 /* MaterialCommunityIcons.ttf */; };
+		44E0EBF72BE8EC0F00669ED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		44E0EBF82BE8EC0F00669ED2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		44E0EBF92BE8EC0F00669ED2 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870812B9B732F00ED5F13 /* FontAwesome5_Brands.ttf */; };
+		44E0EBFA2BE8EC0F00669ED2 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870822B9B732F00ED5F13 /* FontAwesome5_Regular.ttf */; };
+		44E0EBFB2BE8EC0F00669ED2 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870872B9B732F00ED5F13 /* Fontisto.ttf */; };
+		44E0EBFC2BE8EC0F00669ED2 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D95A28DF3024FDB8CC0317A /* Inter-Bold.ttf */; };
+		44E0EBFD2BE8EC0F00669ED2 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707E2B9B732F00ED5F13 /* EvilIcons.ttf */; };
+		44E0EBFE2BE8EC0F00669ED2 /* FontAwesome6_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870862B9B732F00ED5F13 /* FontAwesome6_Solid.ttf */; };
+		44E0EBFF2BE8EC0F00669ED2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708E2B9B732F00ED5F13 /* Zocial.ttf */; };
+		44E0EC002BE8EC0F00669ED2 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870842B9B732F00ED5F13 /* FontAwesome6_Brands.ttf */; };
+		44E0EC012BE8EC0F00669ED2 /* FontAwesome6_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F870852B9B732F00ED5F13 /* FontAwesome6_Regular.ttf */; };
+		44E0EC022BE8EC0F00669ED2 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B98B66D7C24DA2BDBB937B /* Inter-Regular.ttf */; };
+		44E0EC032BE8EC0F00669ED2 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 507A8EE49E7A40E99DA749A3 /* Inter-SemiBold.ttf */; };
+		44E0EC042BE8EC0F00669ED2 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708D2B9B732F00ED5F13 /* SimpleLineIcons.ttf */; };
+		44E0EC052BE8EC0F00669ED2 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707F2B9B732F00ED5F13 /* Feather.ttf */; };
+		44E0EC062BE8EC0F00669ED2 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708B2B9B732F00ED5F13 /* MaterialIcons.ttf */; };
 		44F870902B9B732F00ED5F13 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707C2B9B732F00ED5F13 /* AntDesign.ttf */; };
 		44F870912B9B732F00ED5F13 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707D2B9B732F00ED5F13 /* Entypo.ttf */; };
 		44F870922B9B732F00ED5F13 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8707E2B9B732F00ED5F13 /* EvilIcons.ttf */; };
@@ -32,11 +86,13 @@
 		44F870A02B9B732F00ED5F13 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708C2B9B732F00ED5F13 /* Octicons.ttf */; };
 		44F870A12B9B732F00ED5F13 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708D2B9B732F00ED5F13 /* SimpleLineIcons.ttf */; };
 		44F870A22B9B732F00ED5F13 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44F8708E2B9B732F00ED5F13 /* Zocial.ttf */; };
+		649E395F82469AFCFBCF4ED7 /* Pods_Bookmark_BookmarkDevelopment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10602E9D696BBB4DD2B49984 /* Pods_Bookmark_BookmarkDevelopment.framework */; };
 		671E95779D3E6B14A6B92D5D /* Pods_Bookmark_BookmarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D1866227FDFF7190248346 /* Pods_Bookmark_BookmarkTests.framework */; };
 		709B9755C1AE4507ABB54E5E /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D95A28DF3024FDB8CC0317A /* Inter-Bold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		941FDBB26A4E5D58C3DF8627 /* Pods_Bookmark_BookmarkStaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFA5D9928AB9BB782D3A006 /* Pods_Bookmark_BookmarkStaging.framework */; };
 		F87610BB9C2B4DADBA7B4776 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B98B66D7C24DA2BDBB937B /* Inter-Regular.ttf */; };
-		F9544C23B7034969466B16E1 /* Pods_Bookmark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D9C9EE4E91785A332CA003 /* Pods_Bookmark.framework */; };
+		F9544C23B7034969466B16E1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,15 +109,22 @@
 		00E356EE1AD99517003FC87E /* BookmarkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookmarkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* BookmarkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookmarkTests.m; sourceTree = "<group>"; };
+		10602E9D696BBB4DD2B49984 /* Pods_Bookmark_BookmarkDevelopment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bookmark_BookmarkDevelopment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Bookmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Bookmark/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = Bookmark/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Bookmark/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Bookmark/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Bookmark/main.m; sourceTree = "<group>"; };
-		23D9C9EE4E91785A332CA003 /* Pods_Bookmark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bookmark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D8D9369A82DB76FC218F7A /* Pods-Bookmark-BookmarkStaging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookmark-BookmarkStaging.debug.xcconfig"; path = "Target Support Files/Pods-Bookmark-BookmarkStaging/Pods-Bookmark-BookmarkStaging.debug.xcconfig"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Bookmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookmark.debug.xcconfig"; path = "Target Support Files/Pods-Bookmark/Pods-Bookmark.debug.xcconfig"; sourceTree = "<group>"; };
-		442261352BAAFD3500B2B773 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44C6EBAE2BE91239001140F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44C6EBAF2BE91251001140F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44C6EBB02BE916B0001140F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		44E0EBE42BE8EBFE00669ED2 /* BookmarkStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookmarkStaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44E0EBE52BE8EBFF00669ED2 /* BookmarkStaging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BookmarkStaging-Info.plist"; path = "/Users/kate/Documents/Home/Bookmark/ios/BookmarkStaging-Info.plist"; sourceTree = "<absolute>"; };
+		44E0EC0F2BE8EC0F00669ED2 /* BookmarkDevelopment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookmarkDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44E0EC102BE8EC0F00669ED2 /* BookmarkDevelopment-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BookmarkDevelopment-Info.plist"; path = "/Users/kate/Documents/Home/Bookmark/ios/BookmarkDevelopment-Info.plist"; sourceTree = "<absolute>"; };
 		44F8707C2B9B732F00ED5F13 /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
 		44F8707D2B9B732F00ED5F13 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
 		44F8707E2B9B732F00ED5F13 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
@@ -85,10 +148,14 @@
 		56D1866227FDFF7190248346 /* Pods_Bookmark_BookmarkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bookmark_BookmarkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5709B34CF0A7D63546082F79 /* Pods-Bookmark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookmark.release.xcconfig"; path = "Target Support Files/Pods-Bookmark/Pods-Bookmark.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Bookmark-BookmarkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookmark-BookmarkTests.debug.xcconfig"; path = "Target Support Files/Pods-Bookmark-BookmarkTests/Pods-Bookmark-BookmarkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7AFA5D9928AB9BB782D3A006 /* Pods_Bookmark_BookmarkStaging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bookmark_BookmarkStaging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D95A28DF3024FDB8CC0317A /* Inter-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Bold.ttf"; path = "../src/assets/fonts/Inter-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Bookmark/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Bookmark-BookmarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookmark-BookmarkTests.release.xcconfig"; path = "Target Support Files/Pods-Bookmark-BookmarkTests/Pods-Bookmark-BookmarkTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6B98B66D7C24DA2BDBB937B /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../src/assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		DD82EF6ADE69BCD700190572 /* Pods-Bookmark-BookmarkDevelopment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookmark-BookmarkDevelopment.release.xcconfig"; path = "Target Support Files/Pods-Bookmark-BookmarkDevelopment/Pods-Bookmark-BookmarkDevelopment.release.xcconfig"; sourceTree = "<group>"; };
+		DF15869E830A8077B3FFBE92 /* Pods-Bookmark-BookmarkStaging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookmark-BookmarkStaging.release.xcconfig"; path = "Target Support Files/Pods-Bookmark-BookmarkStaging/Pods-Bookmark-BookmarkStaging.release.xcconfig"; sourceTree = "<group>"; };
+		E0969A879005E925BA530F09 /* Pods-Bookmark-BookmarkDevelopment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bookmark-BookmarkDevelopment.debug.xcconfig"; path = "Target Support Files/Pods-Bookmark-BookmarkDevelopment/Pods-Bookmark-BookmarkDevelopment.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -105,7 +172,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9544C23B7034969466B16E1 /* Pods_Bookmark.framework in Frameworks */,
+				F9544C23B7034969466B16E1 /* (null) in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44E0EBC02BE8EBFE00669ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				941FDBB26A4E5D58C3DF8627 /* Pods_Bookmark_BookmarkStaging.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44E0EBEB2BE8EC0F00669ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				649E395F82469AFCFBCF4ED7 /* Pods_Bookmark_BookmarkDevelopment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,10 +230,35 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				23D9C9EE4E91785A332CA003 /* Pods_Bookmark.framework */,
 				56D1866227FDFF7190248346 /* Pods_Bookmark_BookmarkTests.framework */,
+				10602E9D696BBB4DD2B49984 /* Pods_Bookmark_BookmarkDevelopment.framework */,
+				7AFA5D9928AB9BB782D3A006 /* Pods_Bookmark_BookmarkStaging.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44C6EBA22BE90EB2001140F9 /* Production */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EBAF2BE91251001140F9 /* GoogleService-Info.plist */,
+			);
+			path = Production;
+			sourceTree = "<group>";
+		};
+		44C6EBA32BE90ED5001140F9 /* Development */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EBAE2BE91239001140F9 /* GoogleService-Info.plist */,
+			);
+			path = Development;
+			sourceTree = "<group>";
+		};
+		44C6EBA42BE90EE1001140F9 /* Staging */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EBB02BE916B0001140F9 /* GoogleService-Info.plist */,
+			);
+			path = Staging;
 			sourceTree = "<group>";
 		};
 		44F8708F2B9B732F00ED5F13 /* Fonts */ = {
@@ -190,7 +298,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				442261352BAAFD3500B2B773 /* GoogleService-Info.plist */,
+				44C6EBA42BE90EE1001140F9 /* Staging */,
+				44C6EBA32BE90ED5001140F9 /* Development */,
+				44C6EBA22BE90EB2001140F9 /* Production */,
 				13B07FAE1A68108700A75B9A /* Bookmark */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* BookmarkTests */,
@@ -198,6 +308,8 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
 				87116E53E570409FAA0BCCF4 /* Resources */,
+				44E0EBE52BE8EBFF00669ED2 /* BookmarkStaging-Info.plist */,
+				44E0EC102BE8EC0F00669ED2 /* BookmarkDevelopment-Info.plist */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -209,6 +321,8 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* Bookmark.app */,
 				00E356EE1AD99517003FC87E /* BookmarkTests.xctest */,
+				44E0EBE42BE8EBFE00669ED2 /* BookmarkStaging.app */,
+				44E0EC0F2BE8EC0F00669ED2 /* BookmarkDevelopment.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +344,10 @@
 				5709B34CF0A7D63546082F79 /* Pods-Bookmark.release.xcconfig */,
 				5B7EB9410499542E8C5724F5 /* Pods-Bookmark-BookmarkTests.debug.xcconfig */,
 				89C6BE57DB24E9ADA2F236DE /* Pods-Bookmark-BookmarkTests.release.xcconfig */,
+				E0969A879005E925BA530F09 /* Pods-Bookmark-BookmarkDevelopment.debug.xcconfig */,
+				DD82EF6ADE69BCD700190572 /* Pods-Bookmark-BookmarkDevelopment.release.xcconfig */,
+				27D8D9369A82DB76FC218F7A /* Pods-Bookmark-BookmarkStaging.debug.xcconfig */,
+				DF15869E830A8077B3FFBE92 /* Pods-Bookmark-BookmarkStaging.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -281,6 +399,48 @@
 			productReference = 13B07F961A680F5B00A75B9A /* Bookmark.app */;
 			productType = "com.apple.product-type.application";
 		};
+		44E0EBBB2BE8EBFE00669ED2 /* BookmarkStaging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44E0EBE12BE8EBFE00669ED2 /* Build configuration list for PBXNativeTarget "BookmarkStaging" */;
+			buildPhases = (
+				44E0EBBC2BE8EBFE00669ED2 /* [CP] Check Pods Manifest.lock */,
+				44E0EBBD2BE8EBFE00669ED2 /* Sources */,
+				44E0EBC02BE8EBFE00669ED2 /* Frameworks */,
+				44E0EBC22BE8EBFE00669ED2 /* Resources */,
+				44E0EBDC2BE8EBFE00669ED2 /* Bundle React Native code and images */,
+				44E0EBDD2BE8EBFE00669ED2 /* [CP] Embed Pods Frameworks */,
+				44E0EBDE2BE8EBFE00669ED2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BookmarkStaging;
+			productName = Bookmark;
+			productReference = 44E0EBE42BE8EBFE00669ED2 /* BookmarkStaging.app */;
+			productType = "com.apple.product-type.application";
+		};
+		44E0EBE62BE8EC0F00669ED2 /* BookmarkDevelopment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44E0EC0C2BE8EC0F00669ED2 /* Build configuration list for PBXNativeTarget "BookmarkDevelopment" */;
+			buildPhases = (
+				44E0EBE72BE8EC0F00669ED2 /* [CP] Check Pods Manifest.lock */,
+				44E0EBE82BE8EC0F00669ED2 /* Sources */,
+				44E0EBEB2BE8EC0F00669ED2 /* Frameworks */,
+				44E0EBED2BE8EC0F00669ED2 /* Resources */,
+				44E0EC072BE8EC0F00669ED2 /* Bundle React Native code and images */,
+				44E0EC082BE8EC0F00669ED2 /* [CP] Embed Pods Frameworks */,
+				44E0EC092BE8EC0F00669ED2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BookmarkDevelopment;
+			productName = Bookmark;
+			productReference = 44E0EC0F2BE8EC0F00669ED2 /* BookmarkDevelopment.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -313,6 +473,8 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* Bookmark */,
 				00E356ED1AD99517003FC87E /* BookmarkTests */,
+				44E0EBBB2BE8EBFE00669ED2 /* BookmarkStaging */,
+				44E0EBE62BE8EC0F00669ED2 /* BookmarkDevelopment */,
 			);
 		};
 /* End PBXProject section */
@@ -331,7 +493,7 @@
 			files = (
 				44F870A02B9B732F00ED5F13 /* Octicons.ttf in Resources */,
 				44F870902B9B732F00ED5F13 /* AntDesign.ttf in Resources */,
-				442261362BAAFD3500B2B773 /* GoogleService-Info.plist in Resources */,
+				44C6EBB22BE9285E001140F9 /* GoogleService-Info.plist in Resources */,
 				44F8709D2B9B732F00ED5F13 /* Ionicons.ttf in Resources */,
 				44F870942B9B732F00ED5F13 /* FontAwesome.ttf in Resources */,
 				44F870912B9B732F00ED5F13 /* Entypo.ttf in Resources */,
@@ -354,6 +516,70 @@
 				44F870A12B9B732F00ED5F13 /* SimpleLineIcons.ttf in Resources */,
 				44F870932B9B732F00ED5F13 /* Feather.ttf in Resources */,
 				44F8709F2B9B732F00ED5F13 /* MaterialIcons.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44E0EBC22BE8EBFE00669ED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44E0EBC32BE8EBFE00669ED2 /* Octicons.ttf in Resources */,
+				44E0EBC42BE8EBFE00669ED2 /* AntDesign.ttf in Resources */,
+				44E0EBC62BE8EBFE00669ED2 /* Ionicons.ttf in Resources */,
+				44E0EBC72BE8EBFE00669ED2 /* FontAwesome.ttf in Resources */,
+				44E0EBC82BE8EBFE00669ED2 /* Entypo.ttf in Resources */,
+				44E0EBC92BE8EBFE00669ED2 /* Foundation.ttf in Resources */,
+				44E0EBCA2BE8EBFE00669ED2 /* FontAwesome5_Solid.ttf in Resources */,
+				44E0EBCB2BE8EBFE00669ED2 /* MaterialCommunityIcons.ttf in Resources */,
+				44E0EBCC2BE8EBFE00669ED2 /* LaunchScreen.storyboard in Resources */,
+				44E0EBCD2BE8EBFE00669ED2 /* Images.xcassets in Resources */,
+				44E0EBCE2BE8EBFE00669ED2 /* FontAwesome5_Brands.ttf in Resources */,
+				44E0EBCF2BE8EBFE00669ED2 /* FontAwesome5_Regular.ttf in Resources */,
+				44C6EBB12BE916B0001140F9 /* GoogleService-Info.plist in Resources */,
+				44E0EBD02BE8EBFE00669ED2 /* Fontisto.ttf in Resources */,
+				44E0EBD12BE8EBFE00669ED2 /* Inter-Bold.ttf in Resources */,
+				44E0EBD22BE8EBFE00669ED2 /* EvilIcons.ttf in Resources */,
+				44E0EBD32BE8EBFE00669ED2 /* FontAwesome6_Solid.ttf in Resources */,
+				44E0EBD42BE8EBFE00669ED2 /* Zocial.ttf in Resources */,
+				44E0EBD52BE8EBFE00669ED2 /* FontAwesome6_Brands.ttf in Resources */,
+				44E0EBD62BE8EBFE00669ED2 /* FontAwesome6_Regular.ttf in Resources */,
+				44E0EBD72BE8EBFE00669ED2 /* Inter-Regular.ttf in Resources */,
+				44E0EBD82BE8EBFE00669ED2 /* Inter-SemiBold.ttf in Resources */,
+				44E0EBD92BE8EBFE00669ED2 /* SimpleLineIcons.ttf in Resources */,
+				44E0EBDA2BE8EBFE00669ED2 /* Feather.ttf in Resources */,
+				44E0EBDB2BE8EBFE00669ED2 /* MaterialIcons.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44E0EBED2BE8EC0F00669ED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44E0EBEE2BE8EC0F00669ED2 /* Octicons.ttf in Resources */,
+				44E0EBEF2BE8EC0F00669ED2 /* AntDesign.ttf in Resources */,
+				44C6EBB32BE92869001140F9 /* GoogleService-Info.plist in Resources */,
+				44E0EBF12BE8EC0F00669ED2 /* Ionicons.ttf in Resources */,
+				44E0EBF22BE8EC0F00669ED2 /* FontAwesome.ttf in Resources */,
+				44E0EBF32BE8EC0F00669ED2 /* Entypo.ttf in Resources */,
+				44E0EBF42BE8EC0F00669ED2 /* Foundation.ttf in Resources */,
+				44E0EBF52BE8EC0F00669ED2 /* FontAwesome5_Solid.ttf in Resources */,
+				44E0EBF62BE8EC0F00669ED2 /* MaterialCommunityIcons.ttf in Resources */,
+				44E0EBF72BE8EC0F00669ED2 /* LaunchScreen.storyboard in Resources */,
+				44E0EBF82BE8EC0F00669ED2 /* Images.xcassets in Resources */,
+				44E0EBF92BE8EC0F00669ED2 /* FontAwesome5_Brands.ttf in Resources */,
+				44E0EBFA2BE8EC0F00669ED2 /* FontAwesome5_Regular.ttf in Resources */,
+				44E0EBFB2BE8EC0F00669ED2 /* Fontisto.ttf in Resources */,
+				44E0EBFC2BE8EC0F00669ED2 /* Inter-Bold.ttf in Resources */,
+				44E0EBFD2BE8EC0F00669ED2 /* EvilIcons.ttf in Resources */,
+				44E0EBFE2BE8EC0F00669ED2 /* FontAwesome6_Solid.ttf in Resources */,
+				44E0EBFF2BE8EC0F00669ED2 /* Zocial.ttf in Resources */,
+				44E0EC002BE8EC0F00669ED2 /* FontAwesome6_Brands.ttf in Resources */,
+				44E0EC012BE8EC0F00669ED2 /* FontAwesome6_Regular.ttf in Resources */,
+				44E0EC022BE8EC0F00669ED2 /* Inter-Regular.ttf in Resources */,
+				44E0EC032BE8EC0F00669ED2 /* Inter-SemiBold.ttf in Resources */,
+				44E0EC042BE8EC0F00669ED2 /* SimpleLineIcons.ttf in Resources */,
+				44E0EC052BE8EC0F00669ED2 /* Feather.ttf in Resources */,
+				44E0EC062BE8EC0F00669ED2 /* MaterialIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +632,149 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec FirebaseCrashlytics Run from Pods\"\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\"\nelse\n  echo \"info: Exec FirebaseCrashlytics Run from framework\"\n  \"${PROJECT_DIR}/FirebaseCrashlytics.framework/run\"\nfi\n";
+		};
+		44E0EBBC2BE8EBFE00669ED2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bookmark-BookmarkStaging-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44E0EBDC2BE8EBFE00669ED2 /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		44E0EBDD2BE8EBFE00669ED2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkStaging/Pods-Bookmark-BookmarkStaging-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkStaging/Pods-Bookmark-BookmarkStaging-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkStaging/Pods-Bookmark-BookmarkStaging-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44E0EBDE2BE8EBFE00669ED2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkStaging/Pods-Bookmark-BookmarkStaging-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkStaging/Pods-Bookmark-BookmarkStaging-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkStaging/Pods-Bookmark-BookmarkStaging-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44E0EBE72BE8EC0F00669ED2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bookmark-BookmarkDevelopment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44E0EC072BE8EC0F00669ED2 /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		44E0EC082BE8EC0F00669ED2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkDevelopment/Pods-Bookmark-BookmarkDevelopment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkDevelopment/Pods-Bookmark-BookmarkDevelopment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkDevelopment/Pods-Bookmark-BookmarkDevelopment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44E0EC092BE8EC0F00669ED2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkDevelopment/Pods-Bookmark-BookmarkDevelopment-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkDevelopment/Pods-Bookmark-BookmarkDevelopment-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bookmark-BookmarkDevelopment/Pods-Bookmark-BookmarkDevelopment-resources.sh\"\n";
 		};
 		A31D88D3664AF960DA30B966 /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -535,6 +904,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		44E0EBBD2BE8EBFE00669ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44E0EBBE2BE8EBFE00669ED2 /* AppDelegate.mm in Sources */,
+				44E0EBBF2BE8EBFE00669ED2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44E0EBE82BE8EC0F00669ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44E0EBE92BE8EC0F00669ED2 /* AppDelegate.mm in Sources */,
+				44E0EBEA2BE8EC0F00669ED2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -606,6 +993,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Bookmark/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Bookmark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -632,6 +1020,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = Bookmark/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Bookmark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -644,6 +1033,114 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Bookmark;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		44E0EBE22BE8EBFE00669ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27D8D9369A82DB76FC218F7A /* Pods-Bookmark-BookmarkStaging.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "BookmarkStaging-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bookmsrk-staging";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		44E0EBE32BE8EBFE00669ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF15869E830A8077B3FFBE92 /* Pods-Bookmark-BookmarkStaging.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "BookmarkStaging-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bookmsrk-staging";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		44E0EC0D2BE8EC0F00669ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0969A879005E925BA530F09 /* Pods-Bookmark-BookmarkDevelopment.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "BookmarkDevelopment-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bookmark-dev";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		44E0EC0E2BE8EC0F00669ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD82EF6ADE69BCD700190572 /* Pods-Bookmark-BookmarkDevelopment.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = "BookmarkDevelopment-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Bookmark-dev";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -729,10 +1226,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -811,10 +1305,7 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -839,6 +1330,24 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44E0EBE12BE8EBFE00669ED2 /* Build configuration list for PBXNativeTarget "BookmarkStaging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44E0EBE22BE8EBFE00669ED2 /* Debug */,
+				44E0EBE32BE8EBFE00669ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44E0EC0C2BE8EC0F00669ED2 /* Build configuration list for PBXNativeTarget "BookmarkDevelopment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44E0EC0D2BE8EC0F00669ED2 /* Debug */,
+				44E0EC0E2BE8EC0F00669ED2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

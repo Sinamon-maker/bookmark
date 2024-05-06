@@ -17,6 +17,10 @@ const useLogin = () => {
         setLoading(false);
       })
       .catch(error => {
+        if (error.code === 'auth/invalid-credential') {
+          setError('Wrong cridentials');
+          console.log(error.code, error);
+        }
         if (error.code === 'auth/wrong-password') {
           setError('Wrong cridentials');
           console.log(error.code, error);
